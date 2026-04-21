@@ -37,7 +37,7 @@ export default function Page() {
         <WhoIsItFor />
 
         {/* Key Outcomes */}
-        <WhatYoullGetCards id="outcomes" />
+        <WhatYoullGetCards />
 
         {/* Learning journey / roadmap */}
         <LearningJourney />
