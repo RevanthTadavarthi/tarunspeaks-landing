@@ -2,13 +2,6 @@
 
 import { useEffect } from "react";
 
-/**
- * EMIModal Component
- * 
- * This is a modal (popup) that shows EMI (Equated Monthly Installment) payment options.
- * It displays different EMI plans with monthly payment amounts.
- * The modal can be closed by clicking outside, pressing Escape, or clicking the close button.
- */
 interface EMIModalProps {
   onClose: () => void;
 }
@@ -48,20 +41,20 @@ export default function EMIModal({ onClose }: EMIModalProps) {
       aria-labelledby="emi-modal-title"
     >
       <div
-        className="bg-bg border-2 border-accent rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+        className="bg-[#0d0d0d] border border-[#222222] p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto rounded-none"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
-          <h2 id="emi-modal-title" className="text-2xl font-bold text-primary">
-            EMI Payment Plans
+          <h2 id="emi-modal-title" className="text-xl font-bold text-white uppercase tracking-tight font-mono">
+            EMI Payment Plans //
           </h2>
           <button
             onClick={onClose}
-            className="text-primary/70 hover:text-primary text-2xl focus:outline-none focus:ring-2 focus:ring-accent rounded"
+            className="text-[#8e8e93] hover:text-white text-2xl font-mono focus:outline-none"
             aria-label="Close modal"
           >
-            ×
+            &times;
           </button>
         </div>
 
@@ -70,16 +63,16 @@ export default function EMIModal({ onClose }: EMIModalProps) {
           {emiPlans.map((plan, index) => (
             <div
               key={index}
-              className="bg-accent/10 border border-accent/30 rounded-lg p-6 hover:border-secondary transition-all"
+              className="bg-[#141414] border border-[#222222] p-6 hover:border-[#1526b4]/50 rounded-none transition-colors duration-200"
             >
               <div className="text-center">
-                <div className="text-3xl font-bold text-secondary mb-2">
+                <div className="text-2xl font-mono font-bold text-[#00bf63] mb-2">
                   ₹{plan.emi.toLocaleString("en-IN")}
                 </div>
-                <div className="text-primary/70 text-sm mb-1">
+                <div className="text-[#8e8e93] text-xs font-mono mb-1">
                   per month for {plan.months} months
                 </div>
-                <div className="text-secondary text-xs font-semibold">
+                <div className="text-[#00bf63] text-xs font-mono uppercase tracking-wider font-semibold">
                   {plan.interest} interest
                 </div>
               </div>
@@ -88,17 +81,17 @@ export default function EMIModal({ onClose }: EMIModalProps) {
         </div>
 
         {/* Total Amount */}
-        <div className="bg-accent/10 border border-accent/30 rounded-lg p-4 mb-6">
-          <div className="flex justify-between items-center">
-            <span className="text-primary/80">Total Amount:</span>
-            <span className="text-2xl font-bold text-primary">
+        <div className="bg-[#141414] border border-[#222222] p-4 mb-6 rounded-none">
+          <div className="flex justify-between items-center font-mono text-sm">
+            <span className="text-[#8e8e93]">Total Amount:</span>
+            <span className="text-xl font-bold text-white">
               ₹{totalPrice.toLocaleString("en-IN")}
             </span>
           </div>
         </div>
 
         {/* Note */}
-        <div className="text-primary/60 text-sm mb-6">
+        <div className="text-[#8e8e93] text-xs mb-6 font-mono leading-relaxed">
           <p>
             * EMI plans are subject to bank approval. Interest rates may vary based on your credit
             score and bank policies. Contact us for more details.
@@ -108,15 +101,13 @@ export default function EMIModal({ onClose }: EMIModalProps) {
         {/* CTA Button */}
         <button
           onClick={() => {
-            // In a real implementation, this would redirect to EMI payment gateway
-            alert("EMI payment integration coming soon. Please contact us for EMI options.");
+            alert("EMI payment options are discussed during and after your interview call.");
           }}
-          className="w-full bg-accent hover:bg-accent/90 text-primary px-8 py-4 rounded-lg font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-bg"
+          className="w-full bg-[#1526b4] hover:bg-[#1f32d2] text-white px-8 py-4 rounded-none font-mono font-bold uppercase tracking-wider transition-colors focus:outline-none"
         >
-          Proceed with EMI
+          Request EMI Approval
         </button>
       </div>
     </div>
   );
 }
-

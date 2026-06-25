@@ -2,16 +2,6 @@
 
 import { useState, useEffect } from "react";
 
-/**
- * CountdownScarcity Component
- * 
- * This component creates urgency by showing:
- * - How many seats are left in the course
- * - A visual progress bar showing seat availability
- * - The countdown to the cohort start date
- * 
- * This helps encourage potential students to enroll quickly.
- */
 export default function CountdownScarcity() {
   const [seatsLeft, setSeatsLeft] = useState(0);
   const [totalSeats, setTotalSeats] = useState(30);
@@ -27,17 +17,17 @@ export default function CountdownScarcity() {
   const percentageReserved = (reservedSeats / totalSeats) * 100;
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-accent/10 border-y border-accent/30">
+    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[#141414] border-y border-[#222222] rounded-none">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-6">
-          <div className="text-3xl font-bold text-secondary mb-2">{seatsLeft}</div>
-          <div className="text-primary/80">Seats Remaining</div>
+          <div className="text-3xl font-mono font-bold text-[#00bf63] mb-2">{seatsLeft}</div>
+          <div className="text-white/80 font-mono text-xs uppercase tracking-wider">Seats Remaining for Batch 14</div>
         </div>
 
         {/* Progress Bar */}
-        <div className="w-full bg-accent/20 rounded-full h-4 mb-4 overflow-hidden">
+        <div className="w-full bg-[#1526b4]/20 rounded-none h-3 mb-4 overflow-hidden border border-[#222222]">
           <div
-            className="bg-secondary h-full transition-all duration-500"
+            className="bg-[#00bf63] h-full transition-all duration-500 rounded-none"
             style={{ width: `${percentageReserved}%` }}
             role="progressbar"
             aria-valuenow={reservedSeats}
@@ -47,11 +37,10 @@ export default function CountdownScarcity() {
           />
         </div>
 
-        <div className="text-center text-sm text-primary/60">
-          {reservedSeats} of {totalSeats} seats already reserved
+        <div className="text-center text-xs font-mono text-[#8e8e93] uppercase tracking-wider">
+          {reservedSeats} of {totalSeats} seats already reserved — cohort closes when full
         </div>
       </div>
     </section>
   );
 }
-

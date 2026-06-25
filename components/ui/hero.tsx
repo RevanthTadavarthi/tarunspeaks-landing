@@ -71,7 +71,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
           {/* Primary Editorial Heading */}
           <h1
             className={cn(
-              "text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-6 max-w-4xl",
+              "text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white leading-[1.05] mb-6 max-w-4xl",
               titleClassName,
             )}
           >

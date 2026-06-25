@@ -19,8 +19,8 @@ export default function AlumniLogos({ id }: AlumniLogosProps) {
   ];
 
   const Tile = ({ company }: { company: string }) => (
-    <div className="inline-flex items-center justify-center gap-[12px] h-[80px] min-w-[200px] py-[16px] px-[32px] mr-[24px] bg-transparent border border-[rgba(255,255,255,0.10)] rounded-[12px] transition-colors duration-200 hover:border-[rgba(255,255,255,0.25)] group/tile cursor-default">
-      <span className="text-white/60 text-[16px] tracking-wide font-medium whitespace-nowrap transition-colors duration-200 group-hover/tile:text-white/90">
+    <div className="inline-flex items-center justify-center gap-[12px] h-[80px] min-w-[200px] py-[16px] px-[32px] mr-[24px] bg-[#141414] border border-[#222222] rounded-none transition-colors duration-200 hover:border-white/20 group/tile cursor-default">
+      <span className="text-white/60 text-[14px] font-mono tracking-wide font-medium whitespace-nowrap transition-colors duration-200 group-hover/tile:text-white/90">
         {company}
       </span>
     </div>
@@ -30,7 +30,7 @@ export default function AlumniLogos({ id }: AlumniLogosProps) {
     <section
       ref={sectionRef}
       id={id || "alumni"}
-      className={`py-16 lg:py-24 overflow-hidden reveal ${isVisible ? 'show' : ''}`}
+      className={`py-16 lg:py-24 bg-black overflow-hidden reveal ${isVisible ? 'show' : ''}`}
     >
       <style>{`
         @keyframes scroll-left {
@@ -42,13 +42,13 @@ export default function AlumniLogos({ id }: AlumniLogosProps) {
         }
       `}</style>
       
-      {/* Header section (max-width bounded) */}
+      {/* Header section */}
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 mb-[40px]">
         <div className="text-center">
-          <div className="text-[11px] uppercase tracking-[0.12em] text-[#1526b4] mb-3 font-semibold">
-            ALUMNI
+          <div className="text-[11px] uppercase tracking-[0.12em] text-[#1526b4] mb-3 font-mono font-semibold">
+            ALUMNI //
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-primary">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tighter text-white uppercase leading-[1.05]">
             Where our alumni work
           </h2>
         </div>
@@ -67,11 +67,9 @@ export default function AlumniLogos({ id }: AlumniLogosProps) {
             <div className="flex">
               {companies.map((company, index) => <Tile key={`a1-${index}`} company={company} />)}
             </div>
-            {/* Array strictly duplicated to map precisely to the 50% transform infinite cycle layout */}
             <div className="flex">
               {companies.map((company, index) => <Tile key={`a2-${index}`} company={company} />)}
             </div>
-            {/* Adding a 3rd and 4th duplicate ensures safety bounds on ultra-wides since -50% shifts 2 arrays off */}
             <div className="flex">
               {companies.map((company, index) => <Tile key={`a3-${index}`} company={company} />)}
             </div>
@@ -82,9 +80,9 @@ export default function AlumniLogos({ id }: AlumniLogosProps) {
         </div>
       </div>
 
-      {/* Disclaimer section (max-width bounded) */}
+      {/* Disclaimer section */}
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 mt-[32px]">
-        <p className="text-[13px] text-white/25 text-center max-w-[600px] mx-auto leading-relaxed">
+        <p className="text-[13px] text-white/25 text-center max-w-[600px] mx-auto leading-relaxed font-mono">
           Previous achievements do not ensure future results. Securing employment or internships is contingent upon individual qualifications, experience, and personal effort.
         </p>
       </div>

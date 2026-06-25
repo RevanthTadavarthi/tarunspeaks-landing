@@ -1,10 +1,5 @@
-/**
- * LearningJourney Component
- * 
- * This component visualizes the 5-stage learning journey that students will go through.
- * Each stage represents a phase of the course, from foundation to mastery.
- * The stages are displayed in a horizontal timeline format.
- */
+"use client";
+
 interface LearningJourneyProps {
   id?: string;
 }
@@ -39,40 +34,34 @@ export default function LearningJourney({ id }: LearningJourneyProps) {
   ];
 
   return (
-    <section id={id} className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
-      <div className="max-w-[1200px] mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 text-white">
-          Your Complete Learning Journey
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+    <section id={id} className="py-24 px-6 bg-black border-b border-[#1b1b1b]">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <span className="font-mono text-[11px] tracking-[0.2em] text-[#00bf63] mb-4 uppercase block">
+            THE ACCELERATOR //
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tighter text-white uppercase leading-[1.05]">
+            Learning Journey
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-0 border border-[#222222]">
           {stages.map((stage, index) => (
             <div
               key={index}
-              className="relative z-10 flex flex-col"
+              className="bg-[#141414] p-6 border-b md:border-b-0 md:border-r border-[#222222] last:border-b-0 last:border-r-0 rounded-none flex flex-col justify-between min-h-[220px]"
             >
-              {/* Desktop horizontal dashed connector line */}
-              {index < stages.length - 1 && (
-                <div className="hidden md:block absolute top-[46px] left-[46px] w-[calc(100%+24px)] border-t border-dashed border-white/15 -z-10" />
-              )}
-              
-              <div className="card h-full p-6 transition-transform hover:-translate-y-1 flex flex-col items-start text-left min-h-[220px]">
-                {/* Circular Number Indicator */}
-                <div 
-                  className="flex items-center justify-center w-[44px] h-[44px] shrink-0 rounded-full bg-[#1526b4] text-white text-[16px] font-bold mb-4"
-                >
-                  {stage.number}
+              <div>
+                <div className="font-mono text-xs text-[#00bf63] mb-4">
+                  {stage.number} //
                 </div>
-                
-                {/* Stage Title */}
-                <h3 className="text-white font-bold text-[16px] leading-tight mb-2">
+                <h3 className="text-white font-bold text-[15px] leading-tight mb-2 uppercase tracking-tight">
                   {stage.title}
                 </h3>
-                
-                {/* Outcome Tagline */}
-                <p className="text-[#00bf63] text-[14px] font-medium leading-[1.5]">
-                  {stage.description}
-                </p>
               </div>
+              <p className="text-[#8e8e93] text-xs leading-relaxed font-mono mt-auto">
+                {stage.description}
+              </p>
             </div>
           ))}
         </div>
@@ -80,4 +69,3 @@ export default function LearningJourney({ id }: LearningJourneyProps) {
     </section>
   );
 }
-
