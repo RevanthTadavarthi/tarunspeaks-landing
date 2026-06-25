@@ -47,7 +47,7 @@ export default function FAQ({ id }: FAQProps) {
       id={id || "faq"} 
       className="w-full border-b border-[#141414] py-24 md:py-32 bg-black"
     >
-      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full items-start">
+      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
         {/* Left Grid Matrix Column */}
         <div className="md:col-span-1">
           {/* The Pinned Sticky Container */}
