@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
     };
 
     // 3. Handle Development vs Production routing
-    if (false) {
+    if (process.env.NODE_ENV !== "production") {
       // Local fallback (Development only)
       const seedDir = path.join(process.cwd(), "seed");
       const leadsFile = path.join(seedDir, "leads.json");

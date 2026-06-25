@@ -1,0 +1,20 @@
+/* src/styles/tokens.css */
+@layer base {
+  :root {
+    /* Background Canvas */
+    --canvas-black: #0d0d0d;       /* Main site background */
+    --surface-dark: #141414;       /* Card/Module background contrast */
+    
+    /* Typography System */
+    --text-pure: #ffffff;         /* Main headings, core statements */
+    --text-muted: #8e8e93;        /* Secondary copy, descriptive text */
+    --text-subtle: #48484a;       /* Meta notes, numbers, indices */
+    
+    /* Strict Accent Restrictions */
+    --brand-interactive: #1526b4; /* Only applied to Primary Action/CTAs */
+    --brand-outcome: #00bf63;     /* Only applied to quantitative wins/stats */
+    
+    /* Layout Lines */
+    --border-stark: #222222;      /* Hairline dividers and grids */
+  }
+}

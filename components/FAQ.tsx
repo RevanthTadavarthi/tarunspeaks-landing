@@ -9,7 +9,11 @@ import { useState } from "react";
  * Users can expand each question to see the answer.
  * The questions and answers are based on common concerns about the course.
  */
-export default function FAQ() {
+interface FAQProps {
+  id?: string;
+}
+
+export default function FAQ({ id }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
@@ -46,7 +50,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="pt-12 pb-12 px-4 sm:px-6 lg:px-8">
+    <section id={id || "faq"} className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center mb-12">
           <div className="text-[11px] uppercase tracking-[0.12em] text-[#1526b4] mb-3 font-semibold">

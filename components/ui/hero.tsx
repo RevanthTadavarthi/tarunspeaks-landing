@@ -1,4 +1,4 @@
-  "use client"
+"use client"
 
 import * as React from "react"
 import { motion } from "framer-motion"
@@ -14,8 +14,6 @@ export interface HeroAction {
 
 export interface HeroProps extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
   className?: string
-  gradient?: boolean
-  blur?: boolean
   title?: React.ReactNode
   subtitle?: React.ReactNode
   actions?: HeroAction[]
@@ -28,14 +26,10 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
   (
     {
       className,
-      gradient = true,
-      blur = true,
       title = (
         <>
-          <span className="block text-white">Stop learning marketing in fragments.</span>
-          <span className="block">
-            Start operating at a <span className="bg-gradient-to-r from-[#00bf63] to-[#059669] bg-clip-text text-transparent">systems level.</span>
-          </span>
+          Stop learning marketing in fragments. <br />
+          <span className="text-[#8e8e93]">Start operating at a systems level.</span>
         </>
       ),
       subtitle = (
@@ -58,92 +52,70 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
       <section
         ref={ref}
         className={cn(
-          "relative z-0 flex min-h-[90vh] w-full flex-col items-center justify-center overflow-hidden bg-black",
-          "pt-16 pb-8",
+          "relative z-0 flex min-h-[85vh] w-full flex-col items-center justify-center overflow-hidden bg-black border-b border-[#222222] py-20 px-6",
           className
         )}
         {...props}
       >
-        {gradient && (
-          <div className="absolute top-0 isolate z-0 flex w-screen items-start justify-center">
-            {blur && (
-              <div className="absolute top-0 z-50 h-48 w-screen opacity-10 backdrop-blur-md" />
-            )}
-
-            {/* Main glow */}
-            <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-[-30%] rounded-full bg-[#1526b4]/40 opacity-80 blur-3xl" />
-
-            {/* Lamp effect (animated) */}
-            <motion.div
-              initial={{ width: "8rem" }}
-              viewport={{ once: true }}
-              transition={{ ease: "easeInOut", delay: 0.3, duration: 0.8 }}
-              whileInView={{ width: "16rem" }}
-              className="absolute top-0 z-30 h-36 -translate-y-[20%] rounded-full bg-[#1526b4]/50 blur-2xl"
-            />
-
-            {/* Top line */}
-            <motion.div
-              initial={{ width: "15rem" }}
-              viewport={{ once: true }}
-              transition={{ ease: "easeInOut", delay: 0.3, duration: 0.8 }}
-              whileInView={{ width: "30rem" }}
-              className="absolute inset-auto z-50 h-0.5 -translate-y-[-10%] bg-[#1526b4]/40"
-            />
-          </div>
-        )}
-
         <motion.div
-          initial={{ y: 100, opacity: 0.5 }}
-          viewport={{ once: true }}
-          transition={{ ease: "easeInOut", delay: 0.3, duration: 0.8 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          className="relative z-50 container flex flex-col items-center text-center max-w-[900px] px-5 md:px-10 py-6 mx-auto"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ ease: "easeInOut", duration: 0.6 }}
+          className="relative z-10 flex flex-col items-center text-center max-w-[900px] mx-auto w-full"
         >
-          <div className="flex flex-col items-center justify-center w-full">
-            {/* Batch Badge */}
-            <div className="flex items-center gap-2 mb-4">
-              <span className="w-2 h-2 rounded-full bg-[#00bf63] animate-pulse"></span>
-              <span className="text-sm text-white/60 tracking-widest uppercase">
-                Batch 14 · Now Enrolling · 30 Seats Only
-              </span>
+          {/* Monospace Badge */}
+          <span className="font-mono text-xs tracking-[0.15em] text-[#00bf63] uppercase mb-6 block">
+            ● Batch 14 · Now Enrolling · 30 Seats Only
+          </span>
+
+          {/* Primary Editorial Heading */}
+          <h1
+            className={cn(
+              "text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-6 max-w-4xl",
+              titleClassName,
+            )}
+          >
+            {title}
+          </h1>
+
+          {/* Subtext */}
+          {subtitle && (
+            <p className={cn("text-lg md:text-[19px] text-[#8e8e93] max-w-2xl font-normal leading-relaxed mb-10 mx-auto", subtitleClassName)}>
+              {subtitle}
+            </p>
+          )}
+
+          {/* CTAs Row */}
+          {actions && actions.length > 0 && (
+            <div className={cn("flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto mb-8", actionsClassName)}>
+              {actions.map((action, index) => (
+                <Button 
+                  key={index} 
+                  variant={action.variant as any} 
+                  asChild
+                  className={action.variant === "default" 
+                    ? "bg-[#1526b4] hover:bg-[#1f32d2] text-white font-medium px-8 py-4 rounded-none transition-all text-sm uppercase tracking-wider h-auto min-h-[52px] w-full sm:w-auto border border-[#1526b4]" 
+                    : "border border-white/20 hover:bg-white/8 text-white font-medium px-8 py-4 rounded-none transition-all text-sm uppercase tracking-wider h-auto min-h-[52px] bg-transparent w-full sm:w-auto"}
+                >
+                  <Link href={action.href}>{action.label}</Link>
+                </Button>
+              ))}
             </div>
+          )}
 
-            <h1
-              className={cn(
-                "text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.02em] leading-[1.04]",
-                titleClassName,
-              )}
-            >
-              {title}
-            </h1>
-
-            {subtitle && (
-              <p className={cn("mt-4 text-lg md:text-[19px] text-white/65 max-w-[800px] mx-auto leading-[1.65]", subtitleClassName)}>
-                {subtitle}
-              </p>
-            )}
-
-
-
-            {actions && actions.length > 0 && (
-              <div className={cn("mt-6 flex flex-wrap justify-center gap-4", actionsClassName)}>
-                {actions.map((action, index) => (
-                  <Button 
-                    key={index} 
-                    variant={action.variant as any} 
-                    asChild
-                    className={action.variant === "default" 
-                      ? "bg-[#1526b4] hover:bg-[#1526b4] hover:scale-[1.04] transition-transform rounded-full px-8 py-3.5 text-[17px] shadow-[0_8px_30px_rgba(21,38,180,0.40)] font-semibold h-auto min-h-[52px]" 
-                      : action.variant === "outline" 
-                      ? "border border-white/20 hover:bg-white/8 rounded-full px-7 py-3.5 text-[17px] font-medium h-auto bg-transparent min-h-[52px]" 
-                      : ""}
-                  >
-                    <Link href={action.href}>{action.label}</Link>
-                  </Button>
-                ))}
-              </div>
-            )}
+          {/* Inline Metadata (No separate box, clean metadata line) */}
+          <div className="flex flex-wrap justify-center items-center gap-6 text-[11px] font-mono text-[#8e8e93] border-t border-[#222222] pt-6 w-full max-w-[600px] mt-2">
+            <div>
+              <span className="text-white font-bold">13 BATCHES</span> COMPLETED
+            </div>
+            <div className="hidden sm:block w-[1px] h-3 bg-[#222222]"></div>
+            <div>
+              <span className="text-white font-bold">28,300+</span> OPERATORS TRAINED
+            </div>
+            <div className="hidden sm:block w-[1px] h-3 bg-[#222222]"></div>
+            <div>
+              <span className="text-[#00bf63] font-bold">30 SEATS</span> STRICTLY LIMITED
+            </div>
           </div>
         </motion.div>
       </section>
@@ -155,4 +127,3 @@ Hero.displayName = "Hero"
 
 export { Hero }
 export default Hero
-

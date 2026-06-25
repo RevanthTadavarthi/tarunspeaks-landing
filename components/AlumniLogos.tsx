@@ -30,7 +30,7 @@ export default function AlumniLogos({ id }: AlumniLogosProps) {
     <section
       ref={sectionRef}
       id={id || "alumni"}
-      className={`py-16 overflow-hidden reveal ${isVisible ? 'show' : ''}`}
+      className={`py-16 lg:py-24 overflow-hidden reveal ${isVisible ? 'show' : ''}`}
     >
       <style>{`
         @keyframes scroll-left {

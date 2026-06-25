@@ -100,7 +100,7 @@ export const AnimatedGradient: React.FC<AnimatedGradientProps> = ({
               transition: {
                 duration: animationDuration,
                 repeat: Infinity,
-                ease: [0.445, 0.05, 0.55, 0.95],
+                ease: [0.445, 0.05, 0.55, 0.95] as any,
               },
             },
           };

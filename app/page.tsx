@@ -37,34 +37,37 @@ export default function Page() {
         <WhoIsItFor />
 
         {/* Key Outcomes */}
-        <WhatYoullGetCards />
+        <WhatYoullGetCards id="outcomes" />
 
         {/* Learning journey / roadmap */}
-        <LearningJourney />
+        <LearningJourney id="journey" />
 
         {/* Curriculum accordion */}
-        <Curriculum />
+        <Curriculum id="curriculum" />
 
         {/* Tools & platforms grid */}
-        <ToolsGrid />
+        <ToolsGrid id="tools" />
 
         {/* Instructor highlight */}
         <InstructorCard id="instructor" />
 
-        {/* Mentors & alumni */}
-        <MentorsGrid />
-        <AlumniLogos />
+        {/* Mentors */}
+        <MentorsGrid id="mentors" />
 
-        {/* <CountdownScarcity /> */}
+        {/* Urgency Counter */}
+        <CountdownScarcity />
 
         {/* Social proof */}
-        <Testimonials />
+        <Testimonials id="testimonials" />
+
+        {/* Alumni */}
+        <AlumniLogos id="alumni" />
 
         {/* Pricing + timer/offer */}
-        <Pricing />
+        <Pricing id="pricing" />
 
         {/* FAQs */}
-        <FAQ />
+        <FAQ id="faq" />
 
         {/* Application Form */}
         <FinalCTA id="apply" />

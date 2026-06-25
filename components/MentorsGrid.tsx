@@ -1,4 +1,10 @@
-export default function MentorsGrid({ id }: { id?: string }) {
+"use client";
+
+interface MentorsGridProps {
+  id?: string;
+}
+
+export default function MentorsGrid({ id }: MentorsGridProps) {
   const mentors = [
     { name: "Akshay Gurnani", role: "Co-founder & Former CEO", company: "Schbang" },
     { name: "Vanshikaa Oberoi", role: "Founder & Chief Brand Strategist", company: "The Fingerprint Labs" },
@@ -15,13 +21,13 @@ export default function MentorsGrid({ id }: { id?: string }) {
   ];
 
   return (
-    <section id={id} className="pt-8 pb-8 px-4 sm:px-6 lg:px-8">
+    <section id={id} className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center mb-12">
-          <div className="text-[11px] uppercase tracking-[0.12em] text-[#1526b4] mb-3 font-semibold">
-            NETWORK
+          <div className="text-[11px] uppercase tracking-[0.12em] text-[#1526b4] mb-3 font-mono font-semibold">
+            NETWORK //
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-center text-white">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center text-white uppercase tracking-tight">
             Top 1% Mentors from Tarun's Network
           </h2>
         </div>
@@ -31,14 +37,14 @@ export default function MentorsGrid({ id }: { id?: string }) {
             return (
               <div
                 key={index}
-                className="card flex items-center p-6 bg-white/[0.03] border border-white/[0.06] rounded-[20px] transition-transform hover:-translate-y-1 hover:border-[#1526b4]/50"
+                className="flex items-center p-6 bg-[#141414] border border-[#222222] rounded-none transition-colors duration-200 hover:border-[#1526b4]/50"
               >
-                <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-[#1526b4] text-white font-bold text-lg mr-4">
+                <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-none bg-[#1526b4] text-white font-mono font-bold text-lg mr-4">
                   {initial}
                 </div>
                 <div>
                   <h3 className="font-bold text-white text-[18px] leading-tight mb-1">{mentor.name}</h3>
-                  <p className="text-[14px] text-white/60 leading-snug">{mentor.role}</p>
+                  <p className="text-[14px] text-[#8e8e93] leading-snug">{mentor.role}</p>
                   <p className="text-[13px] text-white/40 leading-snug mt-0.5">{mentor.company}</p>
                 </div>
               </div>
@@ -49,4 +55,3 @@ export default function MentorsGrid({ id }: { id?: string }) {
     </section>
   );
 }
-

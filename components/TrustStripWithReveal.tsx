@@ -99,10 +99,10 @@ export default function TrustStripWithReveal() {
             <motion.div
               key={s.label}
               className="flex flex-col items-center"
-              variants={statVariants(prefersReduced ?? false)}
+              variants={statVariants(!!prefersReduced)}
             >
               <motion.div
-                whileHover={(prefersReduced ?? false) ? {} : { scale: 1.02 }}
+                whileHover={(!!prefersReduced) ? {} : { scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 18 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#00bf63] leading-tight"
                 aria-hidden={prefersReduced ? true : false}

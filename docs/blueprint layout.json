@@ -1,0 +1,91 @@
+{
+  "project": "Real Marketing. Deep Mastery (RMDM)",
+  "version": "2.0.0",
+  "tier": "Premium Cohort (Pricing: INR 97,000)",
+  "dom_execution_sequence": [
+    {
+      "section_id": "announcement_strip",
+      "component": "AnnouncementStrip",
+      "properties": {
+        "variant": "monospace-banner",
+        "content": "THE ANTI-TEMPLATE COHORT FOR MARKETING LEADERS // SELECTION BY APPLICATION ONLY"
+      }
+    },
+    {
+      "section_id": "hero_engine",
+      "component": "HeroEngine",
+      "content": {
+        "headline_primary": "You know the tools.",
+        "headline_secondary": "Nobody taught you the system.",
+        "sub_headline": "Stop collecting tactical fragments. Master the end-to-end mathematical frameworks used by top 1% growth teams to build, scale, and defend consumer brands.",
+        "cta_label": "Apply for Cohort 14 →",
+        "inline_metadata": [
+          {"label": "Batches Completed", "value": "13 Batches"},
+          {"label": "Operators Trained", "value": "28,300+"},
+          {"label": "Seat Allocation", "value": "30 Seats Strictly Limited"}
+        ]
+      }
+    },
+    {
+      "section_id": "fragment_trap",
+      "component": "FragmentTrap",
+      "layout": "asymmetric-two-column",
+      "content": {
+        "header_title": "The Fragment Trap",
+        "header_subtitle": "Why 90% of digital marketing spend generates noise, not compounding growth.",
+        "grid_items": [
+          {
+            "index": "01",
+            "label": "THE TACTICAL DILEMMA",
+            "body": "You know how to run a Meta ad, set up a HubSpot workflow, or prompt an AI engine. But you don't know how they mathematically impact your balance sheet."
+          },
+          {
+            "index": "02",
+            "label": "THE ATTRIBUTION ILLUSION",
+            "body": "Looking at isolated dashboard metrics is lying to yourself. If your blended CAC isn't dropping while your scale increases, your marketing isn't working."
+          },
+          {
+            "index": "03",
+            "label": "THE PLAYBOOK OBSOLESCENCE",
+            "body": "Copying yesterday's growth hacks from LinkedIn creators ensures you stay one step behind. Frameworks endure; tactics expire in 6 months."
+          }
+        ]
+      }
+    },
+    {
+      "section_id": "core_architecture",
+      "component": "CoreArchitecture",
+      "layout": "2x2-monochromatic-matrix",
+      "content": {
+        "header_title": "The System Archetype",
+        "header_subtitle": "4 Modules. Deep execution. Zero high-level fluff.",
+        "pillars": [
+          {
+            "id": "M1",
+            "title": "Performance Marketing & Data Foundations",
+            "frameworks": "Advanced Attribution Modeling, First-Party Data Architecture, Cohort Analysis & LTV Forecasting",
+            "deliverable": "A bulletproof dashboard tracking true profitability, completely independent of platform vanity data."
+          },
+          {
+            "id": "M2",
+            "title": "Content Strategy & Brand Systems",
+            "frameworks": "The Narrative Hook Framework, Content Supply Chain Automation, Viral Distribution Mechanics",
+            "deliverable": "A repeatable brand engine designed to feed your paid performance funnels organically."
+          },
+          {
+            "id": "M3",
+            "title": "Growth Loops & Product-Led Marketing",
+            "frameworks": "Acquisition vs. Retention Loops, Referral Mechanics, Friction-Reduction Frameworks",
+            "deliverable": "A self-sustaining framework that lowers your structural reliance on escalating paid acquisition."
+          },
+          {
+            "id": "M4",
+            "title": "Marketing Operations & Leadership",
+            "frameworks": "Growth Team Structuring, Budget Allocation Models, Tech Stack Orchestration",
+            "deliverable": "A 90-day execution roadmap tailored specifically to your brand's current constraints and scale."
+          }
+        ]
+      }
+    }
+  ]
+}

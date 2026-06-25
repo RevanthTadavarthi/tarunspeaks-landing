@@ -2,7 +2,11 @@
 
 import { useReveal } from "@/lib/useReveal";
 
-export default function WhoIsItFor() {
+interface WhoIsItForProps {
+  id?: string;
+}
+
+export default function WhoIsItFor({ id }: WhoIsItForProps) {
   const [ref, isVisible] = useReveal();
 
   const personas = [
@@ -41,10 +45,10 @@ export default function WhoIsItFor() {
   ];
 
   return (
-    <section ref={ref} className={`pt-12 pb-24 px-5 md:px-10 reveal ${isVisible ? 'show' : ''}`}>
+    <section id={id} ref={ref} className={`py-16 lg:py-24 px-5 md:px-10 reveal ${isVisible ? 'show' : ''}`}>
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center mb-16 lg:mb-20">
-          <div className="text-[11px] uppercase tracking-widest text-[#1526b4] mb-4 font-semibold">
+          <div className="text-[11px] uppercase tracking-[0.12em] text-[#1526b4] mb-3 font-semibold">
             Who this is for
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-[48px] font-bold leading-[1.10] text-[#FFFFFF] mb-6">
@@ -59,20 +63,10 @@ export default function WhoIsItFor() {
           {personas.map((persona, index) => (
             <div 
               key={index} 
-              className="card group !rounded-l-none !rounded-r-[20px] transition-all duration-200"
-              style={{ 
-                animationDelay: `${index * 100}ms`,
-                borderLeft: '3px solid #1526b4'
-              }}
+              className="bg-[#141414] border border-[#222222] border-l-2 border-l-[#1526b4] p-8 rounded-none transition-colors duration-300 hover:border-l-[#00bf63]"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Internal hover style injected for the border transition */}
-              <style jsx>{`
-                .card:hover {
-                  border-left-color: #00bf63 !important;
-                }
-              `}</style>
-
-              <div className="text-[#1526b4] text-[11px] uppercase font-semibold tracking-widest mb-3">
+              <div className="text-[#1526b4] text-[11px] font-mono uppercase font-semibold tracking-widest mb-3">
                 {persona.label}
               </div>
               
@@ -80,15 +74,15 @@ export default function WhoIsItFor() {
                 {persona.title}
               </h3>
               
-              <div className="h-[1px] w-full bg-white/5 mb-6"></div>
+              <div className="h-[1px] w-full bg-[#222222] mb-6"></div>
               
-              <p className="italic text-white/45 text-[17px] leading-[1.65] mb-6">
+              <p className="italic text-white/45 text-[16px] leading-[1.65] mb-6">
                 "{persona.empathy}"
               </p>
               
-              <div className="h-[1px] w-full bg-white/5 mb-6"></div>
+              <div className="h-[1px] w-full bg-[#222222] mb-6"></div>
               
-              <p className="text-white/70 text-[17px] leading-[1.65]">
+              <p className="text-white/70 text-[16px] leading-[1.65]">
                 {persona.pivotStart}
                 <strong className="text-[#00bf63] font-semibold">{persona.pivotHighlight}</strong>
                 {persona.pivotEnd}

@@ -1,0 +1,12 @@
+/* Design Tokens: Dark, Premium, High-Contrast */
+:root {
+  --bg-primary: #0d0d0d;       /* Deep obsidian black */
+  --bg-surface: #141414;       /* Subtle card contrast */
+  --border-subtle: #222222;    /* Crisp divider lines */
+  --text-primary: #ffffff;     /* High-signal text */
+  --text-muted: #8e8e93;       /* De-emphasized meta text */
+  
+  /* Intentional Color Accents */
+  --accent-blue: #1526b4;      /* Interactive elements & CTAs ONLY */
+  --accent-green: #00bf63;     /* Numbers, system stats & outcomes ONLY */
+}

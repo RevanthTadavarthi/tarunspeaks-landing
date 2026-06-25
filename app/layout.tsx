@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "Roadmap to Digital Marketing 2.0 | TarunSpeaks",
-  description: "Get Job-Ready in 100 Hours — Live, Mentor-Led Digital Marketing Training by Tarun. Practical, AI-integrated training with 70h live + 30h recorded sessions.",
-  keywords: "digital marketing course, online marketing training, digital marketing certification, TarunSpeaks, RMDM",
-  authors: [{ name: "TarunSpeaks" }],
+export const metadata = {
+  title: "RMDM by TarunSpeaks — Real Marketing. Real Results. 90 Days.",
+  description: "A 90-day cohort-based marketing accelerator by Tarun Makhija. Learn content strategy, performance marketing, and AI-first workflows. Batch 14 now enrolling. Only 30 seats.",
   openGraph: {
-    title: "Roadmap to Digital Marketing 2.0 | TarunSpeaks",
-    description: "Get Job-Ready in 100 Hours — Live, Mentor-Led Digital Marketing Training",
-    type: "website",
+    title: "RMDM by TarunSpeaks — Batch 14 Now Enrolling",
+    description: "Stop learning marketing in fragments. Join 28,300+ learners. Apply for Batch 14.",
+    url: "https://your-netlify-url.netlify.app",
     images: [
       {
-        url: "/tarun-hero.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "TarunSpeaks Digital Marketing Course",
-      },
+        alt: "RMDM by TarunSpeaks — Batch 14",
+      }
     ],
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Roadmap to Digital Marketing 2.0 | TarunSpeaks",
-    description: "Get Job-Ready in 100 Hours — Live, Mentor-Led Digital Marketing Training",
-    images: ["/tarun-hero.png"],
-  },
+    title: "RMDM by TarunSpeaks",
+    description: "Stop learning marketing in fragments. Apply for Batch 14.",
+    images: ["/og-image.jpg"],
+  }
 };
 
 export default function RootLayout({
