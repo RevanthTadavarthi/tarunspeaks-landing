@@ -38,15 +38,18 @@ export default function Curriculum({ id }: CurriculumProps) {
       id={id || "curriculum"} 
       className={`w-full border-b border-[#141414] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
     >
-      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
+      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full items-start">
         {/* Left Grid Matrix Column */}
         <div className="md:col-span-1">
-          <h2 className="text-2xl md:text-4xl font-extrabold tracking-[-0.04em] leading-[1.0] text-white uppercase">
-            System Archetype
-          </h2>
-          <p className="text-[#8e8e93] text-base leading-relaxed mt-6">
-            4 Modules. Deep execution. Zero high-level fluff.
-          </p>
+          {/* The Pinned Sticky Container */}
+          <div className="sticky top-24 self-start space-y-4">
+            <h2 className="text-2xl md:text-4xl font-extrabold tracking-tighter uppercase text-[#1526b4] leading-[1.05]">
+              System Archetype
+            </h2>
+            <p className="text-base font-normal leading-relaxed text-[#8e8e93] max-w-[280px]">
+              4 Modules. Deep execution. Zero high-level fluff.
+            </p>
+          </div>
         </div>
 
         {/* Right Grid Matrix Column */}

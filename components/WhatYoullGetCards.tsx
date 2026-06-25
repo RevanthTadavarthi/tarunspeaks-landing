@@ -49,16 +49,18 @@ export default function WhatYoullGetCards({ id }: WhatYoullGetCardsProps) {
       ref={ref} 
       className={`w-full border-b border-[#141414] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
     >
-      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
+      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full items-start">
         {/* Left Column: Stark & Elegant */}
         <div className="md:col-span-1">
-          <h2 className="text-2xl md:text-4xl font-extrabold tracking-[-0.04em] leading-[1.0] text-white uppercase">
-            Outcomes
-          </h2>
-          <div className="h-[1px] w-12 bg-[#1526b4] my-6"></div>
-          <p className="text-[#8e8e93] text-base leading-relaxed">
-            Walk away with three concrete outcomes designed to accelerate your operating power.
-          </p>
+          {/* The Pinned Sticky Container */}
+          <div className="sticky top-24 self-start space-y-4">
+            <h2 className="text-2xl md:text-4xl font-extrabold tracking-tighter uppercase text-[#1526b4] leading-[1.05]">
+              Outcomes
+            </h2>
+            <p className="text-base font-normal leading-relaxed text-[#8e8e93] max-w-[280px]">
+              Walk away with three concrete outcomes designed to accelerate your operating power.
+            </p>
+          </div>
         </div>
 
         {/* Right Column: Clean wide stacked list */}
