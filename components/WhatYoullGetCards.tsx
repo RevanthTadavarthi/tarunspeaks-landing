@@ -36,9 +36,6 @@ export default function WhatYoullGetCards({ id }: WhatYoullGetCardsProps) {
       <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
         {/* Left Column: Stark & Elegant */}
         <div className="md:col-span-1">
-          <span className="font-mono text-[11px] tracking-[0.2em] text-[#00bf63] mb-4 block">
-            // DELIVERABLES
-          </span>
           <h2 className="text-2xl md:text-4xl font-extrabold tracking-tighter text-[#ffffff] leading-[1.05] uppercase">
             Outcomes
           </h2>

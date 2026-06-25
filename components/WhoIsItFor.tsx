@@ -42,44 +42,50 @@ export default function WhoIsItFor({ id }: WhoIsItForProps) {
       ref={ref} 
       className={`w-full border-b border-[#1b1b1b] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
     >
-      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
-        {/* Left Grid Matrix Column */}
-        <div className="md:col-span-1">
-          <span className="font-mono text-[11px] tracking-[0.2em] text-[#00bf63] mb-4 uppercase block">
-            WHO IT IS FOR //
-          </span>
-          <h2 className="text-2xl md:text-4xl font-bold tracking-tighter text-[#ffffff] leading-[1.05] uppercase">
-            Audience Cohort
+      <div className="max-w-5xl mx-auto px-6 w-full">
+        {/* Stark & Elegant Intro Header without repetitive green tags */}
+        <div className="mb-16 max-w-2xl">
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-white leading-[1.05] uppercase">
+            Designed for those who lead growth.
           </h2>
-          <p className="text-[#8e8e93] text-sm leading-relaxed mt-4">
-            If you see yourself here, you are exactly who we designed this system for.
+          <p className="text-[#8e8e93] text-sm md:text-base leading-relaxed mt-4">
+            If you see your daily friction points outlined below, this system was custom-engineered to solve your structural growth bottlenecks.
           </p>
         </div>
 
-        {/* Right Grid Matrix Column */}
-        <div className="md:col-span-2 flex flex-col justify-start">
-          {personas.map((persona, index) => (
-            <div 
-              key={index} 
-              className="border-b border-[#222222] py-6 first:pt-0 last:border-b-0 flex gap-6 items-start"
-            >
-              <span className="font-mono text-xs text-[#00bf63] pt-0.5">0{index + 1} //</span>
-              <div className="w-full">
-                <div className="text-[#1526b4] text-[11px] font-mono uppercase font-semibold tracking-widest mb-1">
-                  {persona.label}
+        {/* Staggered Asymmetric Rows (Breaking layout repetition) */}
+        <div className="space-y-16">
+          {personas.map((persona, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <div 
+                key={index} 
+                className={`grid grid-cols-1 md:grid-cols-5 gap-8 items-start pt-12 border-t border-[#1b1b1b] first:pt-0 first:border-t-0`}
+              >
+                {/* Asymmetric Label column (2/5) */}
+                <div className={`md:col-span-2 ${isEven ? "md:order-1" : "md:order-2"}`}>
+                  <span className="font-mono text-xs text-[#00bf63] tracking-widest uppercase block mb-2">
+                    {persona.label} // 0{index + 1}
+                  </span>
+                  <h3 className="text-xl font-bold text-white tracking-tighter leading-[1.1]">
+                    {persona.title}
+                  </h3>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 tracking-tighter leading-[1.05]">
-                  {persona.title}
-                </h3>
-                <p className="italic text-white/45 text-sm mb-3">
-                  "{persona.empathy}"
-                </p>
-                <p className="text-[#8e8e93] text-sm md:text-base leading-relaxed tracking-normal max-w-xl">
-                  {persona.pivot}
-                </p>
+
+                {/* Asymmetric Detail column (3/5) */}
+                <div className={`md:col-span-3 ${isEven ? "md:order-2" : "md:order-1"} space-y-4`}>
+                  <div className="border-l border-[#1526b4] pl-4 py-1">
+                    <p className="italic text-white/45 text-sm leading-relaxed">
+                      "{persona.empathy}"
+                    </p>
+                  </div>
+                  <p className="text-[#8e8e93] text-sm md:text-base leading-relaxed">
+                    {persona.pivot}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

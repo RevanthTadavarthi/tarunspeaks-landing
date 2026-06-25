@@ -31,9 +31,6 @@ export default function ProblemSection() {
       <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
         {/* Left Grid Matrix Column */}
         <div className="md:col-span-1">
-          <span className="font-mono text-[11px] tracking-[0.2em] text-[#00bf63] mb-4 uppercase block">
-            THE PROBLEM //
-          </span>
           <h2 className="text-2xl md:text-4xl font-bold tracking-tighter text-[#ffffff] leading-[1.05] uppercase">
             The Fragment Trap
           </h2>
