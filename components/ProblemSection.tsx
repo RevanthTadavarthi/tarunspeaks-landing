@@ -26,32 +26,32 @@ export default function ProblemSection() {
   return (
     <section 
       ref={ref} 
-      className={`py-24 px-6 max-w-6xl mx-auto border-b border-[#222222] reveal ${isVisible ? 'show' : ''}`}
+      className={`w-full border-b border-[#1b1b1b] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        {/* Left Column: Sticky Section Layout */}
-        <div className="lg:col-span-1 lg:sticky lg:top-24 h-fit">
-          <span className="font-mono text-xs text-[#00bf63] tracking-[0.1em] uppercase mb-3 block">
-            THE PROBLEM
+      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
+        {/* Left Grid Matrix Column */}
+        <div className="md:col-span-1">
+          <span className="font-mono text-[11px] tracking-[0.2em] text-[#00bf63] mb-4 uppercase block">
+            THE PROBLEM //
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight uppercase text-white mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold tracking-tighter text-[#ffffff] leading-[1.05] uppercase">
             The Fragment Trap
           </h2>
-          <p className="text-[#8e8e93] text-sm md:text-base leading-relaxed">
+          <p className="text-[#8e8e93] text-sm leading-relaxed mt-4">
             Why 90% of digital marketing spend generates noise, not compounding growth.
           </p>
         </div>
         
-        {/* Right Column: Vertical Sequence with dividers */}
-        <div className="lg:col-span-2 divide-y divide-[#222222]">
+        {/* Right Grid Matrix Column */}
+        <div className="md:col-span-2 flex flex-col justify-start">
           {DILEMMAS.map((item) => (
-            <div key={item.id} className="py-8 first:pt-0 last:pb-0 flex gap-6 items-start">
-              <span className="font-mono text-xs text-[#00bf63] pt-1">{item.id} //</span>
+            <div key={item.id} className="border-b border-[#222222] py-6 first:pt-0 last:border-b-0 flex gap-6 items-start">
+              <span className="font-mono text-xs text-[#00bf63] pt-0.5">{item.id} //</span>
               <div>
-                <h4 className="font-bold tracking-wide text-sm uppercase text-white mb-2">
+                <h4 className="font-bold tracking-tighter text-base text-white mb-2 leading-[1.05]">
                   {item.label}
                 </h4>
-                <p className="text-[#8e8e93] text-sm leading-relaxed">
+                <p className="text-[#8e8e93] text-sm md:text-base leading-relaxed tracking-normal max-w-xl">
                   {item.desc}
                 </p>
               </div>

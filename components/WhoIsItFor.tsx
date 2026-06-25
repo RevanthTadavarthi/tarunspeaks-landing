@@ -14,79 +14,70 @@ export default function WhoIsItFor({ id }: WhoIsItForProps) {
       label: "Students & freshers",
       title: "You're about to enter the industry.",
       empathy: "Every job posting asks for 2 years of experience. You have zero. You're applying anyway and getting ignored.",
-      pivotStart: "RMDM gives you the ",
-      pivotHighlight: "portfolio and campaign experience",
-      pivotEnd: " to skip that wall entirely.",
+      pivot: "RMDM gives you the portfolio and campaign experience to skip that wall entirely.",
     },
     {
       label: "Working professionals",
       title: "You're doing marketing but not leading it.",
       empathy: "You execute tasks. But when someone asks you to build a strategy from scratch, you freeze. You've never been taught the system.",
-      pivotStart: "RMDM gives you the ",
-      pivotHighlight: "strategic framework",
-      pivotEnd: " to go from executor to the person who owns the room.",
+      pivot: "RMDM gives you the strategic framework to go from executor to the person who owns the room.",
     },
     {
       label: "Freelancers",
       title: "You win clients on instinct.",
       empathy: "You deliver good work but you can't explain why it works. Clients sense it and push back on your rates.",
-      pivotStart: "RMDM gives you the ",
-      pivotHighlight: "language and system",
-      pivotEnd: " to charge what your work is actually worth.",
+      pivot: "RMDM gives you the language and system to charge what your work is actually worth.",
     },
     {
       label: "Entrepreneurs",
       title: "You're doing your own marketing.",
       empathy: "You post. You boost. You try things. Nothing compounds. You can't afford to hire a CMO but you need one.",
-      pivotStart: "RMDM teaches you to ",
-      pivotHighlight: "think like a CMO",
-      pivotEnd: " — not just a person who makes content.",
+      pivot: "RMDM teaches you to think like a CMO — not just a person who makes content.",
     },
   ];
 
   return (
-    <section id={id} ref={ref} className={`py-16 lg:py-24 px-5 md:px-10 reveal ${isVisible ? 'show' : ''}`}>
-      <div className="max-w-[1200px] mx-auto">
-        <div className="text-center mb-16 lg:mb-20">
-          <div className="text-[11px] uppercase tracking-[0.12em] text-[#1526b4] mb-3 font-semibold">
-            Who this is for
-          </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-[48px] font-bold leading-[1.10] text-[#FFFFFF] mb-6">
-            This cohort is built for four kinds of people.
+    <section 
+      id={id} 
+      ref={ref} 
+      className={`w-full border-b border-[#1b1b1b] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
+    >
+      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
+        {/* Left Grid Matrix Column */}
+        <div className="md:col-span-1">
+          <span className="font-mono text-[11px] tracking-[0.2em] text-[#00bf63] mb-4 uppercase block">
+            WHO IT IS FOR //
+          </span>
+          <h2 className="text-2xl md:text-4xl font-bold tracking-tighter text-[#ffffff] leading-[1.05] uppercase">
+            Audience Cohort
           </h2>
-          <p className="text-[17px] md:text-[19px] leading-[1.65] text-white/45 max-w-[800px] mx-auto">
-            If you see yourself below — you're exactly who we designed this for.
+          <p className="text-[#8e8e93] text-sm leading-relaxed mt-4">
+            If you see yourself here, you are exactly who we designed this system for.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+        {/* Right Grid Matrix Column */}
+        <div className="md:col-span-2 flex flex-col justify-start">
           {personas.map((persona, index) => (
             <div 
               key={index} 
-              className="bg-[#141414] border border-[#222222] border-l-2 border-l-[#1526b4] p-8 rounded-none transition-colors duration-300 hover:border-l-[#00bf63]"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="border-b border-[#222222] py-6 first:pt-0 last:border-b-0 flex gap-6 items-start"
             >
-              <div className="text-[#1526b4] text-[11px] font-mono uppercase font-semibold tracking-widest mb-3">
-                {persona.label}
+              <span className="font-mono text-xs text-[#00bf63] pt-0.5">0{index + 1} //</span>
+              <div className="w-full">
+                <div className="text-[#1526b4] text-[11px] font-mono uppercase font-semibold tracking-widest mb-1">
+                  {persona.label}
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2 tracking-tighter leading-[1.05]">
+                  {persona.title}
+                </h3>
+                <p className="italic text-white/45 text-sm mb-3">
+                  "{persona.empathy}"
+                </p>
+                <p className="text-[#8e8e93] text-sm md:text-base leading-relaxed tracking-normal max-w-xl">
+                  {persona.pivot}
+                </p>
               </div>
-              
-              <h3 className="text-[20px] md:text-[22px] font-bold text-white mb-6">
-                {persona.title}
-              </h3>
-              
-              <div className="h-[1px] w-full bg-[#222222] mb-6"></div>
-              
-              <p className="italic text-white/45 text-[16px] leading-[1.65] mb-6">
-                "{persona.empathy}"
-              </p>
-              
-              <div className="h-[1px] w-full bg-[#222222] mb-6"></div>
-              
-              <p className="text-white/70 text-[16px] leading-[1.65]">
-                {persona.pivotStart}
-                <strong className="text-[#00bf63] font-semibold">{persona.pivotHighlight}</strong>
-                {persona.pivotEnd}
-              </p>
             </div>
           ))}
         </div>

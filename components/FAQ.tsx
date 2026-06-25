@@ -2,13 +2,6 @@
 
 import { useState } from "react";
 
-/**
- * FAQ Component
- * 
- * This component displays frequently asked questions in an accordion format.
- * Users can expand each question to see the answer.
- * The questions and answers are based on common concerns about the course.
- */
 interface FAQProps {
   id?: string;
 }
@@ -50,35 +43,48 @@ export default function FAQ({ id }: FAQProps) {
   ];
 
   return (
-    <section id={id || "faq"} className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-[1200px] mx-auto">
-        <div className="text-center mb-12">
-          <div className="text-[11px] uppercase tracking-[0.12em] text-[#1526b4] mb-3 font-semibold">
-            FAQ
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-primary">
-            Frequently Asked Questions
+    <section 
+      id={id || "faq"} 
+      className="w-full border-b border-[#1b1b1b] py-24 md:py-32 bg-black"
+    >
+      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
+        {/* Left Grid Matrix Column */}
+        <div className="md:col-span-1">
+          <span className="font-mono text-[11px] tracking-[0.2em] text-[#00bf63] mb-4 uppercase block">
+            FAQ //
+          </span>
+          <h2 className="text-2xl md:text-4xl font-bold tracking-tighter text-[#ffffff] leading-[1.05] uppercase">
+            Questions
           </h2>
+          <p className="text-[#8e8e93] text-sm leading-relaxed mt-4">
+            Everything you need to know about the admission process, program format, and scholarship pathways.
+          </p>
         </div>
-        <div className="space-y-4">
+
+        {/* Right Grid Matrix Column */}
+        <div className="md:col-span-2 flex flex-col justify-start">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-accent/10 border border-accent/30 rounded-lg overflow-hidden"
+              className="border-b border-[#222222] py-6 first:pt-0 last:border-b-0"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none focus:ring-2 focus:ring-accent rounded-lg"
+                className="w-full flex items-center justify-between text-left focus:outline-none"
                 aria-expanded={openIndex === index}
               >
-                <span className="font-semibold text-primary text-lg pr-4">{faq.question}</span>
-                <span className="text-accent text-2xl flex-shrink-0">
-                  {openIndex === index ? "−" : "+"}
+                <span className="font-bold text-white text-base md:text-lg tracking-tighter leading-[1.05] pr-4">
+                  {faq.question}
+                </span>
+                <span className="text-[#1526b4] text-xl font-mono flex-shrink-0">
+                  {openIndex === index ? "[-]" : "[+]"}
                 </span>
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-4">
-                  <p className="text-primary/80 leading-relaxed">{faq.answer}</p>
+                <div className="pt-4">
+                  <p className="text-[#8e8e93] text-sm md:text-base leading-relaxed tracking-normal max-w-xl">
+                    {faq.answer}
+                  </p>
                 </div>
               )}
             </div>
@@ -88,4 +94,3 @@ export default function FAQ({ id }: FAQProps) {
     </section>
   );
 }
-
