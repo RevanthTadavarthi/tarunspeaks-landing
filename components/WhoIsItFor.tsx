@@ -40,46 +40,46 @@ export default function WhoIsItFor({ id }: WhoIsItForProps) {
     <section 
       id={id} 
       ref={ref} 
-      className={`w-full border-b border-[#1b1b1b] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
+      className={`w-full border-b border-[#141414] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
     >
       <div className="max-w-5xl mx-auto px-6 w-full">
-        {/* Stark & Elegant Intro Header without repetitive green tags */}
+        {/* Stark & Elegant Intro Header */}
         <div className="mb-16 max-w-2xl">
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-white leading-[1.05] uppercase">
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-[-0.04em] leading-[1.0] text-white uppercase">
             Designed for those who lead growth.
           </h2>
-          <p className="text-[#8e8e93] text-sm md:text-base leading-relaxed mt-4">
+          <p className="text-[#8e8e93] text-base leading-relaxed mt-4">
             If you see your daily friction points outlined below, this system was custom-engineered to solve your structural growth bottlenecks.
           </p>
         </div>
 
-        {/* Staggered Asymmetric Rows (Breaking layout repetition) */}
+        {/* Staggered Asymmetric Rows */}
         <div className="space-y-16">
           {personas.map((persona, index) => {
             const isEven = index % 2 === 0;
             return (
               <div 
                 key={index} 
-                className={`grid grid-cols-1 md:grid-cols-5 gap-8 items-start pt-12 border-t border-[#1b1b1b] first:pt-0 first:border-t-0`}
+                className="grid grid-cols-1 md:grid-cols-5 gap-8 items-start pt-12 border-t border-[#141414] first:pt-0 first:border-t-0"
               >
-                {/* Asymmetric Label column (2/5) */}
+                {/* Asymmetric Label column */}
                 <div className={`md:col-span-2 ${isEven ? "md:order-1" : "md:order-2"}`}>
-                  <span className="font-mono text-xs text-[#00bf63] tracking-widest uppercase block mb-2">
-                    {persona.label} // 0{index + 1}
-                  </span>
-                  <h3 className="text-xl font-bold text-white tracking-tighter leading-[1.1]">
+                  <div className="text-[#1526b4] text-[11px] font-mono uppercase font-bold tracking-widest mb-2">
+                    {persona.label}
+                  </div>
+                  <h3 className="text-xl font-extrabold text-white tracking-[-0.04em] leading-[1.0] uppercase">
                     {persona.title}
                   </h3>
                 </div>
 
-                {/* Asymmetric Detail column (3/5) */}
+                {/* Asymmetric Detail column */}
                 <div className={`md:col-span-3 ${isEven ? "md:order-2" : "md:order-1"} space-y-4`}>
                   <div className="border-l border-[#1526b4] pl-4 py-1">
                     <p className="italic text-white/45 text-sm leading-relaxed">
                       "{persona.empathy}"
                     </p>
                   </div>
-                  <p className="text-[#8e8e93] text-sm md:text-base leading-relaxed">
+                  <p className="text-[#8e8e93] text-base leading-relaxed">
                     {persona.pivot}
                   </p>
                 </div>

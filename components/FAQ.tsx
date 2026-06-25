@@ -45,15 +45,15 @@ export default function FAQ({ id }: FAQProps) {
   return (
     <section 
       id={id || "faq"} 
-      className="w-full border-b border-[#1b1b1b] py-24 md:py-32 bg-black"
+      className="w-full border-b border-[#141414] py-24 md:py-32 bg-black"
     >
       <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
         {/* Left Grid Matrix Column */}
         <div className="md:col-span-1">
-          <h2 className="text-2xl md:text-4xl font-bold tracking-tighter text-[#ffffff] leading-[1.05] uppercase">
+          <h2 className="text-2xl md:text-4xl font-extrabold tracking-[-0.04em] leading-[1.0] text-white uppercase">
             Questions
           </h2>
-          <p className="text-[#8e8e93] text-sm leading-relaxed mt-4">
+          <p className="text-[#8e8e93] text-base leading-relaxed mt-6">
             Everything you need to know about the admission process, program format, and scholarship pathways.
           </p>
         </div>
@@ -63,14 +63,14 @@ export default function FAQ({ id }: FAQProps) {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border-b border-[#222222] py-6 first:pt-0 last:border-b-0"
+              className="border-b border-[#141414] py-6 first:pt-0 last:border-b-0"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full flex items-center justify-between text-left focus:outline-none"
                 aria-expanded={openIndex === index}
               >
-                <span className="font-bold text-white text-base md:text-lg tracking-tighter leading-[1.05] pr-4">
+                <span className="font-extrabold text-white text-base md:text-lg tracking-[-0.04em] leading-[1.0] uppercase pr-4">
                   {faq.question}
                 </span>
                 <span className="text-[#1526b4] text-xl font-mono flex-shrink-0">
@@ -79,7 +79,7 @@ export default function FAQ({ id }: FAQProps) {
               </button>
               {openIndex === index && (
                 <div className="pt-4">
-                  <p className="text-[#8e8e93] text-sm md:text-base leading-relaxed tracking-normal max-w-xl">
+                  <p className="text-[#8e8e93] text-base leading-relaxed max-w-xl">
                     {faq.answer}
                   </p>
                 </div>

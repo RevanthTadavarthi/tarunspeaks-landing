@@ -52,7 +52,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
       <section
         ref={ref}
         className={cn(
-          "relative z-0 flex min-h-[85vh] w-full flex-col items-center justify-center overflow-hidden bg-black border-b border-[#222222] py-20 px-6",
+          "relative z-0 flex min-h-[85vh] w-full flex-col items-center justify-center overflow-hidden bg-black border-b border-[#141414] py-20 px-6",
           className
         )}
         {...props}
@@ -63,15 +63,10 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
           transition={{ ease: "easeInOut", duration: 0.6 }}
           className="relative z-10 flex flex-col items-center text-center max-w-[900px] mx-auto w-full"
         >
-          {/* Monospace Badge */}
-          <span className="font-mono text-xs tracking-[0.15em] text-[#00bf63] uppercase mb-6 block">
-            ● Batch 14 · Now Enrolling · 30 Seats Only
-          </span>
-
           {/* Primary Editorial Heading */}
           <h1
             className={cn(
-              "text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white leading-[1.05] mb-6 max-w-4xl",
+              "text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-[-0.04em] leading-[1.0] text-white mb-8 max-w-4xl",
               titleClassName,
             )}
           >
@@ -80,14 +75,14 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
 
           {/* Subtext */}
           {subtitle && (
-            <p className={cn("text-lg md:text-[19px] text-[#8e8e93] max-w-2xl font-normal leading-relaxed mb-10 mx-auto", subtitleClassName)}>
+            <p className={cn("text-[#8e8e93] text-base leading-relaxed max-w-xl mb-10 mx-auto", subtitleClassName)}>
               {subtitle}
             </p>
           )}
 
           {/* CTAs Row */}
           {actions && actions.length > 0 && (
-            <div className={cn("flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto mb-8", actionsClassName)}>
+            <div className={cn("flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto mb-10", actionsClassName)}>
               {actions.map((action, index) => (
                 <Button 
                   key={index} 
@@ -103,16 +98,16 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
             </div>
           )}
 
-          {/* Inline Metadata (No separate box, clean metadata line) */}
-          <div className="flex flex-wrap justify-center items-center gap-6 text-[11px] font-mono text-[#8e8e93] border-t border-[#222222] pt-6 w-full max-w-[600px] mt-2">
+          {/* Inline Metadata */}
+          <div className="flex flex-wrap justify-center items-center gap-6 text-[11px] font-mono text-[#8e8e93] border-t border-[#141414] pt-6 w-full max-w-[600px] mt-2">
             <div>
               <span className="text-white font-bold">13 BATCHES</span> COMPLETED
             </div>
-            <div className="hidden sm:block w-[1px] h-3 bg-[#222222]"></div>
+            <div className="hidden sm:block w-[1px] h-3 bg-[#141414]"></div>
             <div>
               <span className="text-white font-bold">28,300+</span> OPERATORS TRAINED
             </div>
-            <div className="hidden sm:block w-[1px] h-3 bg-[#222222]"></div>
+            <div className="hidden sm:block w-[1px] h-3 bg-[#141414]"></div>
             <div>
               <span className="text-[#00bf63] font-bold">30 SEATS</span> STRICTLY LIMITED
             </div>

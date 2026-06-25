@@ -34,26 +34,23 @@ export default function LearningJourney({ id }: LearningJourneyProps) {
   ];
 
   return (
-    <section id={id} className="py-24 px-6 bg-black border-b border-[#1b1b1b]">
+    <section id={id} className="py-24 px-6 bg-black border-b border-[#141414]">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <span className="font-mono text-[11px] tracking-[0.2em] text-[#00bf63] mb-4 uppercase block">
-            THE ACCELERATOR //
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tighter text-white uppercase leading-[1.05]">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-[-0.04em] leading-[1.0] text-white uppercase">
             Learning Journey
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-0 border border-[#222222]">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-0 border border-[#141414]">
           {stages.map((stage, index) => (
             <div
               key={index}
-              className="bg-[#141414] p-6 border-b md:border-b-0 md:border-r border-[#222222] last:border-b-0 last:border-r-0 rounded-none flex flex-col justify-between min-h-[220px]"
+              className="bg-[#141414] p-6 border-b md:border-b-0 md:border-r border-[#141414] last:border-b-0 last:border-r-0 rounded-none flex flex-col justify-between min-h-[220px]"
             >
               <div>
                 <div className="font-mono text-xs text-[#00bf63] mb-4">
-                  {stage.number} //
+                  {stage.number}
                 </div>
                 <h3 className="text-white font-bold text-[15px] leading-tight mb-2 uppercase tracking-tight">
                   {stage.title}

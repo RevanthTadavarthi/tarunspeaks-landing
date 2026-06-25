@@ -69,32 +69,19 @@ export default function FinalCTA({ id }: FinalCTAProps) {
   const labelClass = "block text-[13px] text-white/60 mb-[6px] font-mono uppercase tracking-wider";
 
   return (
-    <section id={id || "apply"} className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-black border-t border-[#222222]">
+    <section id={id || "apply"} className="relative py-24 px-4 sm:px-6 lg:px-8 bg-black border-t border-[#141414]">
       <div className="relative z-10 max-w-[1200px] mx-auto flex flex-col items-center">
-        {/* Section Header */}
-        <div className="text-[11px] uppercase tracking-[0.12em] text-[#1526b4] font-mono font-semibold mb-4 text-center">
-          Apply //
-        </div>
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-2 text-white uppercase tracking-tight">
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-center mb-4 text-white uppercase tracking-[-0.04em] leading-[1.0] max-w-2xl">
           Ready to stop learning in fragments?
         </h2>
-        <div className="text-[#8e8e93] text-center mb-12 text-sm md:text-base">
+        <div className="text-[#8e8e93] text-center mb-12 text-base leading-relaxed">
           Apply for Batch 14. We'll be in touch within 48 hours.
         </div>
 
         {/* ALWAYS RENDER FORM & LOADING */}
         <div className="w-full max-w-[580px]">
-          {/* Monospace Process Strip */}
-          <div className="flex justify-center items-center mb-12 text-xs font-mono tracking-wider">
-            <span className="text-[#1526b4] font-bold">[1] APPLY</span>
-            <span className="text-white/10 mx-3">——</span>
-            <span className="text-white/40 font-medium">[2] INTERVIEW CALL</span>
-            <span className="text-white/10 mx-3">——</span>
-            <span className="text-white/40 font-medium">[3] DECISION</span>
-          </div>
-
           {/* Form Card */}
-          <div className="bg-[#141414] border border-[#222222] p-6 sm:p-[36px] w-full rounded-none">
+          <div className="bg-[#141414] border border-[#141414] p-6 sm:p-[36px] w-full rounded-none">
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
@@ -206,7 +193,7 @@ export default function FinalCTA({ id }: FinalCTAProps) {
                   className="w-full rounded-none bg-[#1526b4] py-[15px] px-[24px] text-white font-mono font-bold uppercase tracking-wider transition-all disabled:opacity-85 hover:bg-[#1f32d2] flex items-center justify-center gap-2"
                 >
                   {uiState === "loading" ? (
-                    "[STATUS: SUBMITTING]"
+                    "SUBMITTING..."
                   ) : (
                     "Submit application →"
                   )}
@@ -221,7 +208,7 @@ export default function FinalCTA({ id }: FinalCTAProps) {
           </div>
 
           <div className="mt-8 text-center px-4">
-            <p className="text-[13px] text-white/25 mb-4">
+            <p className="text-[13px] text-white/25 mb-4 font-mono">
               Applications are reviewed manually. Not everyone is accepted — we want each cohort to be the right mix of people.
             </p>
             <Link href="/syllabus.pdf" className="text-[13px] text-white/30 underline hover:text-white/50 transition-colors font-mono">
@@ -240,7 +227,7 @@ export default function FinalCTA({ id }: FinalCTAProps) {
             ></div>
             
             {/* Modal Card */}
-            <div className="relative w-[420px] max-w-[90vw] max-h-[85vh] bg-[#0d0d0d] border border-[#00bf63]/25 rounded-none p-[24px] overflow-y-auto animate-in zoom-in-95 fade-in duration-200 ease-out shadow-2xl">
+            <div className="relative w-[420px] max-w-[90vw] max-h-[85vh] bg-[#0d0d0d] border border-[#141414] rounded-none p-[24px] overflow-y-auto animate-in zoom-in-95 fade-in duration-200 ease-out shadow-2xl">
               
               {/* Close Button X */}
               <button 
@@ -253,22 +240,22 @@ export default function FinalCTA({ id }: FinalCTAProps) {
 
               {/* Status Header Indicator */}
               <div className="text-[#00bf63] font-mono text-center text-xs tracking-wider mb-4">
-                [STATUS: SECURED]
+                [SECURED]
               </div>
               
               {/* Title & Body */}
-              <h3 className="text-white font-bold text-[20px] text-center mt-2 mb-2 uppercase tracking-tight">Application received.</h3>
+              <h3 className="text-white font-extrabold text-[20px] text-center mt-2 mb-2 uppercase tracking-[-0.04em] leading-[1.0]">Application received.</h3>
               <p className="text-[13px] text-[#8e8e93] text-center leading-relaxed font-mono">
                 We've got your details. Someone from the TarunSpeaks team will call you within 48 hours.
               </p>
               
               {/* Divider */}
-              <div className="h-[1px] w-full bg-[#222222] my-[20px]"></div>
+              <div className="h-[1px] w-full bg-[#141414] my-[20px]"></div>
               
               {/* Compact Steps list */}
               <div className="space-y-4">
                 <div className="flex gap-2.5 text-left">
-                  <div className="flex-shrink-0 text-[#00bf63] font-mono text-[14px]">01 //</div>
+                  <div className="flex-shrink-0 text-[#00bf63] font-mono text-[14px]">•</div>
                   <div>
                     <div className="text-white font-bold text-[14px] leading-tight mb-0.5 uppercase tracking-wide">Check your phone.</div>
                     <div className="text-[#8e8e93] text-[12px] leading-relaxed">
@@ -277,7 +264,7 @@ export default function FinalCTA({ id }: FinalCTAProps) {
                   </div>
                 </div>
                 <div className="flex gap-2.5 text-left">
-                  <div className="flex-shrink-0 text-[#00bf63] font-mono text-[14px]">02 //</div>
+                  <div className="flex-shrink-0 text-[#00bf63] font-mono text-[14px]">•</div>
                   <div>
                     <div className="text-white font-bold text-[14px] leading-tight mb-0.5 uppercase tracking-wide">15-minute conversation.</div>
                     <div className="text-[#8e8e93] text-[12px] leading-relaxed">
@@ -286,7 +273,7 @@ export default function FinalCTA({ id }: FinalCTAProps) {
                   </div>
                 </div>
                 <div className="flex gap-2.5 text-left">
-                  <div className="flex-shrink-0 text-[#00bf63] font-mono text-[14px]">03 //</div>
+                  <div className="flex-shrink-0 text-[#00bf63] font-mono text-[14px]">•</div>
                   <div>
                     <div className="text-white font-bold text-[14px] leading-tight mb-0.5 uppercase tracking-wide">You'll hear back.</div>
                     <div className="text-[#8e8e93] text-[12px] leading-relaxed">
