@@ -28,8 +28,8 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
       className,
       title = (
         <>
-          Stop learning marketing in fragments. <br />
-          <span className="text-[#8e8e93]">Start operating at a systems level.</span>
+          You know the tools. <br />
+          <span className="text-[#555555]">Nobody taught you the system.</span>
         </>
       ),
       subtitle = (
@@ -75,7 +75,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
 
           {/* Subtext */}
           {subtitle && (
-            <p className={cn("text-[#8e8e93] text-base leading-relaxed max-w-xl mb-10 mx-auto", subtitleClassName)}>
+            <p className={cn("text-[#8e8e93] text-base leading-[1.65] max-w-xl mb-10 mx-auto", subtitleClassName)}>
               {subtitle}
             </p>
           )}
@@ -89,8 +89,8 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
                   variant={action.variant as any} 
                   asChild
                   className={action.variant === "default" 
-                    ? "bg-[#1526b4] hover:bg-[#1f32d2] text-white font-medium px-8 py-4 rounded-none transition-all text-sm uppercase tracking-wider h-auto min-h-[52px] w-full sm:w-auto border border-[#1526b4]" 
-                    : "border border-white/20 hover:bg-white/8 text-white font-medium px-8 py-4 rounded-none transition-all text-sm uppercase tracking-wider h-auto min-h-[52px] bg-transparent w-full sm:w-auto"}
+                    ? "bg-[#1526b4] hover:bg-[#1f32d2] text-white px-8 py-4 rounded-md font-bold text-center tracking-tight transition-all duration-200 uppercase h-auto min-h-[52px] w-full sm:w-auto border border-[#1526b4]" 
+                    : "border border-white/20 hover:bg-white/8 text-white px-8 py-4 rounded-md font-bold text-center tracking-tight transition-all duration-200 uppercase h-auto min-h-[52px] bg-transparent w-full sm:w-auto"}
                 >
                   <Link href={action.href}>{action.label}</Link>
                 </Button>

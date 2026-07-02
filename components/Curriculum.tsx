@@ -36,40 +36,46 @@ export default function Curriculum({ id }: CurriculumProps) {
     <section 
       ref={ref} 
       id={id || "curriculum"} 
-      className={`w-full border-b border-[#141414] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
+      className={`w-full border-b border-[#1b1b1b] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
     >
       <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
-        {/* Left Grid Matrix Column */}
-        <div className="md:col-span-1">
-          {/* The Pinned Sticky Container */}
-          <div className="sticky top-24 self-start space-y-4">
-            <h2 className="text-2xl md:text-4xl font-extrabold tracking-tighter uppercase text-[#1526b4] leading-[1.05]">
+        {/* Left Column: Pinned Sticky */}
+        <div className="md:col-span-1 self-stretch">
+          <div className="md:sticky md:top-24 self-start space-y-4">
+            <h2 className="text-2xl md:text-4xl font-extrabold tracking-[-0.04em] leading-[1.0] uppercase text-[#1526b4]">
               System Archetype
             </h2>
-            <p className="text-base font-normal leading-relaxed text-[#8e8e93] max-w-[280px]">
+            <p className="text-[#8e8e93] text-base leading-[1.65] max-w-[280px]">
               4 Modules. Deep execution. Zero high-level fluff.
             </p>
           </div>
         </div>
 
-        {/* Right Grid Matrix Column */}
-        <div className="md:col-span-2 flex flex-col justify-start">
+        {/* Right Column: Clean widescreen alternating rows */}
+        <div className="md:col-span-2 flex flex-col divide-y divide-[#1b1b1b]">
           {MODULES.map((mod, index) => (
             <div 
               key={index} 
-              className="border-b border-[#141414] py-6 first:pt-0 last:border-b-0 flex gap-6 items-start"
+              className={`p-8 flex flex-col space-y-4 rounded-none transition-colors duration-300 ${
+                index % 2 === 0 ? "bg-[#080808]" : "bg-black"
+              }`}
             >
-              <div className="w-full">
-                <h3 className="text-lg font-extrabold text-white mb-2 tracking-[-0.04em] leading-[1.0] uppercase">
-                  {mod.title}
-                </h3>
-                <p className="text-xs font-mono text-[#8e8e93] mb-3 uppercase tracking-wider">
-                  <span className="text-white">Frameworks: </span>{mod.frameworks}
-                </p>
-                <div className="text-xs font-mono text-[#00bf63] uppercase tracking-wider">
-                  <span className="text-[#8e8e93]">Deliverable: </span>{mod.output}
-                </div>
+              <div className="flex items-center gap-3">
+                <span className="text-[#8e8e93] font-mono text-xs uppercase tracking-wider">
+                  Module 0{index + 1}
+                </span>
               </div>
+              <h3 className="text-xl md:text-2xl font-extrabold text-white tracking-[-0.04em] leading-[1.0] uppercase">
+                {mod.title}
+              </h3>
+              <p className="text-[#8e8e93] text-base leading-[1.65]">
+                <span className="text-white font-mono text-sm uppercase block mb-1">Frameworks:</span>
+                {mod.frameworks}
+              </p>
+              <p className="text-[#8e8e93] text-base leading-[1.65]">
+                <span className="text-white font-mono text-sm uppercase block mb-1">Deliverable:</span>
+                {mod.output}
+              </p>
             </div>
           ))}
         </div>

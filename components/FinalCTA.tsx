@@ -65,23 +65,23 @@ export default function FinalCTA({ id }: FinalCTAProps) {
     }
   };
 
-  const inputClass = "w-full bg-white/5 border border-white/10 rounded-none py-[11px] px-[14px] text-white/80 placeholder:text-white/30 focus:outline-none focus:border-[#1526b4] focus:bg-[#1526b4]/[0.06] transition-colors font-mono text-sm";
+  const inputClass = "w-full bg-transparent border-b border-[#222222] rounded-none py-[11px] px-0 text-white/80 placeholder:text-white/30 focus:outline-none focus:border-white transition-colors font-mono text-sm";
   const labelClass = "block text-[13px] text-white/60 mb-[6px] font-mono uppercase tracking-wider";
 
   return (
-    <section id={id || "apply"} className="relative py-24 px-4 sm:px-6 lg:px-8 bg-black border-t border-[#141414]">
+    <section id={id || "apply"} className="relative py-24 px-4 sm:px-6 lg:px-8 bg-black border-t border-[#1b1b1b]">
       <div className="relative z-10 max-w-[1200px] mx-auto flex flex-col items-center">
         <h2 className="text-3xl sm:text-5xl font-extrabold text-center mb-4 text-white uppercase tracking-[-0.04em] leading-[1.0] max-w-2xl">
           Ready to stop learning in fragments?
         </h2>
-        <div className="text-[#8e8e93] text-center mb-12 text-base leading-relaxed">
+        <div className="text-[#8e8e93] text-center mb-12 text-base leading-[1.65]">
           Apply for Batch 14. We'll be in touch within 48 hours.
         </div>
 
         {/* ALWAYS RENDER FORM & LOADING */}
         <div className="w-full max-w-[580px]">
           {/* Form Card */}
-          <div className="bg-[#141414] border border-[#141414] p-6 sm:p-[36px] w-full rounded-none">
+          <div className="bg-transparent border-0 p-0 w-full rounded-none">
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
@@ -190,7 +190,7 @@ export default function FinalCTA({ id }: FinalCTAProps) {
                 <button
                   type="submit"
                   disabled={uiState === "loading"}
-                  className="w-full rounded-none bg-[#1526b4] py-[15px] px-[24px] text-white font-mono font-bold uppercase tracking-wider transition-all disabled:opacity-85 hover:bg-[#1f32d2] flex items-center justify-center gap-2"
+                  className="w-full rounded-md bg-[#1526b4] py-[15px] px-[24px] text-white font-bold text-center tracking-tight transition-all duration-200 uppercase disabled:opacity-85 hover:bg-[#1f32d2] flex items-center justify-center gap-2"
                 >
                   {uiState === "loading" ? (
                     "SUBMITTING..."
@@ -286,7 +286,7 @@ export default function FinalCTA({ id }: FinalCTAProps) {
               {/* Dismiss Button */}
               <button 
                 onClick={closeSuccessModal}
-                className="block w-full mt-[24px] py-[10px] px-[24px] rounded-none border border-white/15 text-white/60 hover:bg-white/5 hover:text-white/90 font-mono text-sm uppercase transition-colors cursor-pointer"
+                className="block w-full mt-[24px] py-[10px] px-[24px] rounded-md border border-white/15 text-white/60 hover:bg-white/5 hover:text-white/90 font-mono text-sm uppercase transition-colors cursor-pointer"
               >
                 Got it
               </button>

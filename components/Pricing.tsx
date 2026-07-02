@@ -29,17 +29,17 @@ export default function Pricing({ id }: PricingProps) {
       <section
         ref={sectionRef}
         id={id || "pricing"}
-        className={`pt-12 lg:pt-16 pb-12 lg:pb-16 px-4 sm:px-6 lg:px-8 reveal ${isVisible ? 'show' : ''}`}
+        className={`pt-12 lg:pt-16 pb-12 lg:pb-16 px-4 sm:px-6 lg:px-8 border-b border-[#1b1b1b] reveal ${isVisible ? 'show' : ''}`}
       >
         <div className="max-w-[1200px] mx-auto flex flex-col items-center">
           {/* Section Header */}
           <div className="text-[11px] uppercase tracking-[0.12em] text-[#1526b4] font-semibold mb-4">
             Pricing
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-2 text-white">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-2 text-white tracking-[-0.04em] leading-[1.0]">
             The investment.
           </h2>
-          <div className="text-white/45 text-center mb-16">
+          <div className="text-[#8e8e93] text-base leading-[1.65] text-center mb-16">
             One-time payment · Lifetime access to all materials
           </div>
 
@@ -48,10 +48,10 @@ export default function Pricing({ id }: PricingProps) {
             <div className="text-[36px] text-white/30 line-through text-center leading-none mb-2">
               ₹1,50,000
             </div>
-            <div className="text-[72px] text-white font-extrabold text-center leading-none mb-4 tracking-tight">
+            <div className="text-[72px] text-white font-extrabold text-center leading-none mb-4 tracking-[-0.04em]">
               ₹97,000
             </div>
-            <div className="text-[13px] text-white/30 text-center">
+            <div className="text-[#8e8e93] text-sm leading-[1.65] text-center">
               Inclusive of all taxes · Save ₹53,000
             </div>
           </div>
@@ -71,43 +71,23 @@ export default function Pricing({ id }: PricingProps) {
           </div>
 
           {/* Scholarship Tiers */}
-          <div className="w-full max-w-4xl mb-12">
-            <div className="text-white/45 text-center mb-8">
+          {/* Scholarship Tiers as Ledger Rows */}
+          <div className="w-full max-w-4xl mb-12 border-t border-[#1b1b1b] border-b border-[#1b1b1b]">
+            <div className="text-[#8e8e93] text-base leading-[1.65] text-center py-6 border-b border-[#1b1b1b]">
               Merit-based scholarships available
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="card text-center p-8">
-                <div className="text-[#1526b4] uppercase text-[11px] font-semibold tracking-wider mb-2">
-                  Tier 1
-                </div>
-                <div className="text-white/70 mb-4 text-sm">
-                  85%+ on eligibility test
-                </div>
-                <div className="text-[#00bf63] font-bold text-2xl">
-                  ₹7,000 off
-                </div>
+            <div className="flex flex-col divide-y divide-[#1b1b1b]">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-6">
+                <div className="text-white font-mono text-sm uppercase font-bold">Tier 1 // 85%+ on eligibility test</div>
+                <div className="text-[#00bf63] font-mono font-bold text-xl mt-2 sm:mt-0">₹7,000 off</div>
               </div>
-              <div className="card text-center p-8">
-                <div className="text-[#1526b4] uppercase text-[11px] font-semibold tracking-wider mb-2">
-                  Tier 2
-                </div>
-                <div className="text-white/70 mb-4 text-sm">
-                  95%+ on eligibility test
-                </div>
-                <div className="text-[#00bf63] font-bold text-2xl">
-                  ₹12,000 off
-                </div>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-6">
+                <div className="text-white font-mono text-sm uppercase font-bold">Tier 2 // 95%+ on eligibility test</div>
+                <div className="text-[#00bf63] font-mono font-bold text-xl mt-2 sm:mt-0">₹12,000 off</div>
               </div>
-              <div className="card text-center p-8">
-                <div className="text-[#1526b4] uppercase text-[11px] font-semibold tracking-wider mb-2">
-                  Tier 3
-                </div>
-                <div className="text-white/70 mb-4 text-sm">
-                  100% on eligibility test
-                </div>
-                <div className="text-[#00bf63] font-bold text-2xl">
-                  ₹17,000 off
-                </div>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-6">
+                <div className="text-white font-mono text-sm uppercase font-bold">Tier 3 // 100% on eligibility test</div>
+                <div className="text-[#00bf63] font-mono font-bold text-xl mt-2 sm:mt-0">₹17,000 off</div>
               </div>
             </div>
           </div>
@@ -117,18 +97,16 @@ export default function Pricing({ id }: PricingProps) {
             Applications close once 30 candidates are accepted. Batch 14 — April 2026.
           </div>
 
-          {/* CTAs */}
           <div className="flex flex-col gap-4 w-full max-w-[280px]">
             <Link
               href="#apply"
-              className="bg-[#1526b4] text-white rounded-full px-8 py-3.5 font-bold text-center transition-transform duration-200 hover:scale-[1.04] flex items-center justify-center whitespace-nowrap"
-              style={{ boxShadow: "0 8px 30px rgba(21,38,180,0.40)" }}
+              className="bg-[#1526b4] hover:bg-[#1f32d2] text-white rounded-md px-8 py-3.5 font-bold text-center tracking-tight transition-all duration-200 uppercase flex items-center justify-center whitespace-nowrap"
             >
               Apply for Batch 14 →
             </Link>
             <button
               onClick={() => setShowEMIModal(true)}
-              className="border border-white/20 text-white rounded-full px-7 py-3.5 font-bold text-center transition-colors duration-200 hover:bg-white/8 flex items-center justify-center whitespace-nowrap"
+              className="border border-white/20 hover:bg-white/8 text-white rounded-md px-7 py-3.5 font-bold text-center tracking-tight transition-all duration-200 uppercase flex items-center justify-center whitespace-nowrap"
             >
               View EMI Plans
             </button>

@@ -12,14 +12,14 @@ export default function InstructorCard({ id }: InstructorCardProps) {
           <div className="text-[11px] uppercase tracking-[0.12em] text-[#1526b4] mb-3 font-mono font-semibold">
             INSTRUCTOR //
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-white uppercase tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-white uppercase tracking-[-0.04em] leading-[1.0]">
             Tarun is not just a trainer — he's a marketing practitioner.
           </h2>
         </div>
-        <div className="bg-[#141414] border border-[#222222] p-8 md:p-12 rounded-none">
+        <div className="border-t border-[#1b1b1b] pt-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Instructor Image */}
-            <div className="relative aspect-square rounded-none overflow-hidden border border-[#222222]">
+            <div className="relative aspect-square rounded-none overflow-hidden border border-[#1b1b1b]">
               <Image
                 src="/tarun-hero.png"
                 alt="Tarun - Digital Marketing Expert and Instructor"
@@ -31,21 +31,21 @@ export default function InstructorCard({ id }: InstructorCardProps) {
             {/* Instructor Info */}
             <div className="space-y-6">
               <div>
-                <h3 className="text-3xl font-bold text-white mb-4 uppercase tracking-tight">Tarun Makhija</h3>
-                <p className="text-[#8e8e93] leading-relaxed mb-6 text-sm md:text-base">
+                <h3 className="text-3xl font-extrabold text-white mb-4 uppercase tracking-[-0.04em] leading-[1.0]">Tarun Makhija</h3>
+                <p className="text-[#8e8e93] text-base leading-[1.65] mb-6">
                   10+ years of hands-on experience building brands, designing campaigns, and leading strategy across sectors. Chief Educator & CEO of TarunSpeaks. Co-founded Big Mouth Digital & Media. Every session in RMDM is built from real campaign work — not textbooks.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="bg-transparent border border-[#222222] rounded-none px-3 py-1 text-xs text-[#8e8e93] font-mono">
+                  <span className="bg-transparent border border-[#1b1b1b] rounded-none px-3 py-1 text-xs text-[#8e8e93] font-mono">
                     BW Marketing 30 Under 30, 2023
                   </span>
-                  <span className="bg-transparent border border-[#222222] rounded-none px-3 py-1 text-xs text-[#8e8e93] font-mono">
+                  <span className="bg-transparent border border-[#1b1b1b] rounded-none px-3 py-1 text-xs text-[#8e8e93] font-mono">
                     Graphy by Unacademy — Top 50, October 2021
                   </span>
-                  <span className="bg-transparent border border-[#222222] rounded-none px-3 py-1 text-xs text-[#8e8e93] font-mono">
+                  <span className="bg-transparent border border-[#1b1b1b] rounded-none px-3 py-1 text-xs text-[#8e8e93] font-mono">
                     Spotify / Anchor — Voice of Anchor
                   </span>
-                  <span className="bg-transparent border border-[#222222] rounded-none px-3 py-1 text-xs text-[#8e8e93] font-mono">
+                  <span className="bg-transparent border border-[#1b1b1b] rounded-none px-3 py-1 text-xs text-[#8e8e93] font-mono">
                     Pepper Content — The Next Big Creator, 2021
                   </span>
                 </div>
@@ -53,19 +53,19 @@ export default function InstructorCard({ id }: InstructorCardProps) {
 
               {/* Stats Badges */}
               <div className="flex flex-wrap gap-4">
-                <div className="bg-transparent border border-[#222222] rounded-none px-4 py-2">
+                <div className="bg-transparent border border-[#1b1b1b] rounded-none px-4 py-2">
                   <div className="text-[#00bf63] font-mono font-bold">28,300+</div>
                   <div className="text-xs text-[#8e8e93] uppercase font-mono mt-0.5">Trained</div>
                 </div>
-                <div className="bg-transparent border border-[#222222] rounded-none px-4 py-2">
+                <div className="bg-transparent border border-[#1b1b1b] rounded-none px-4 py-2">
                   <div className="text-[#00bf63] font-mono font-bold">300+</div>
                   <div className="text-xs text-[#8e8e93] uppercase font-mono mt-0.5">Brands</div>
                 </div>
-                <div className="bg-transparent border border-[#222222] rounded-none px-4 py-2">
+                <div className="bg-transparent border border-[#1b1b1b] rounded-none px-4 py-2">
                   <div className="text-[#00bf63] font-mono font-bold">BW 30</div>
                   <div className="text-xs text-[#8e8e93] uppercase font-mono mt-0.5">Under 30</div>
                 </div>
-                <div className="bg-transparent border border-[#222222] rounded-none px-4 py-2">
+                <div className="bg-transparent border border-[#1b1b1b] rounded-none px-4 py-2">
                   <div className="text-[#00bf63] font-mono font-bold">10+</div>
                   <div className="text-xs text-[#8e8e93] uppercase font-mono mt-0.5">Years</div>
                 </div>

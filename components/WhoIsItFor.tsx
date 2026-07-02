@@ -40,42 +40,42 @@ export default function WhoIsItFor({ id }: WhoIsItForProps) {
     <section 
       id={id} 
       ref={ref} 
-      className={`w-full border-b border-[#141414] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
+      className={`w-full border-b border-[#1b1b1b] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
     >
       <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
         {/* Left Column: Pinned Sticky Container */}
         <div className="md:col-span-1 self-stretch">
-          <div className="sticky top-24 self-start space-y-4">
-            <h2 className="text-2xl md:text-4xl font-extrabold tracking-tighter uppercase text-[#1526b4] leading-[1.05]">
+          <div className="md:sticky md:top-24 self-start space-y-4">
+            <h2 className="text-2xl md:text-4xl font-extrabold tracking-[-0.04em] leading-[1.0] uppercase text-[#1526b4]">
               Designed for those who lead growth
             </h2>
-            <p className="text-base font-normal leading-relaxed text-[#8e8e93] max-w-[280px]">
+            <p className="text-[#8e8e93] text-base leading-[1.65] max-w-[280px]">
               If you see your daily friction points outlined below, this system was custom-engineered to solve your structural growth bottlenecks.
             </p>
           </div>
         </div>
 
-        {/* Right Column: 2x2 Grid of Persona Cards (Restored layout) */}
-        <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* Right Column: Clean alternating widescreen text rows */}
+        <div className="md:col-span-2 flex flex-col divide-y divide-[#1b1b1b]">
           {personas.map((persona, index) => (
             <div 
               key={index} 
-              className="bg-[#141414] border border-[#222222] border-l-2 border-l-[#1526b4] p-6 rounded-none transition-colors duration-300 hover:border-l-[#00bf63] flex flex-col justify-between min-h-[280px]"
+              className={`p-8 flex flex-col space-y-4 rounded-none transition-colors duration-300 ${
+                index % 2 === 0 ? "bg-[#0d0d0d]" : "bg-black"
+              }`}
             >
-              <div>
-                <div className="text-[#1526b4] text-[11px] font-mono uppercase font-bold tracking-widest mb-2">
-                  {persona.label}
-                </div>
-                <h3 className="text-lg font-bold text-white mb-4 tracking-tighter leading-[1.1] uppercase">
-                  {persona.title}
-                </h3>
-                <div className="border-l border-white/10 pl-3 mb-4">
-                  <p className="italic text-white/45 text-xs leading-relaxed">
-                    "{persona.empathy}"
-                  </p>
-                </div>
+              <div className="flex items-center gap-3">
+                <span className="text-[#8e8e93] font-mono text-xs uppercase tracking-wider">
+                  [{String(index + 1).padStart(2, "0")}] {persona.label}
+                </span>
               </div>
-              <p className="text-[#8e8e93] text-sm leading-relaxed mt-auto pt-4 border-t border-[#141414]">
+              <h3 className="text-xl md:text-2xl font-extrabold text-white tracking-[-0.04em] leading-[1.0] uppercase">
+                {persona.title}
+              </h3>
+              <p className="text-[#8e8e93] text-base leading-[1.65] italic">
+                "{persona.empathy}"
+              </p>
+              <p className="text-white text-base leading-[1.65]">
                 {persona.pivot}
               </p>
             </div>

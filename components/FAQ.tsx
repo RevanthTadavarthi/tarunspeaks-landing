@@ -45,17 +45,17 @@ export default function FAQ({ id }: FAQProps) {
   return (
     <section 
       id={id || "faq"} 
-      className="w-full border-b border-[#141414] py-24 md:py-32 bg-black"
+      className="w-full border-b border-[#1b1b1b] py-24 md:py-32 bg-black"
     >
       <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
         {/* Left Grid Matrix Column */}
         <div className="md:col-span-1">
           {/* The Pinned Sticky Container */}
-          <div className="sticky top-24 self-start space-y-4">
-            <h2 className="text-2xl md:text-4xl font-extrabold tracking-tighter uppercase text-[#1526b4] leading-[1.05]">
+          <div className="md:sticky md:top-24 self-start space-y-4">
+            <h2 className="text-2xl md:text-4xl font-extrabold tracking-[-0.04em] leading-[1.0] uppercase text-white">
               Questions
             </h2>
-            <p className="text-base font-normal leading-relaxed text-[#8e8e93] max-w-[280px]">
+            <p className="text-[#8e8e93] text-base leading-[1.65] max-w-[280px]">
               Everything you need to know about the admission process, program format, and scholarship pathways.
             </p>
           </div>
@@ -66,7 +66,7 @@ export default function FAQ({ id }: FAQProps) {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border-b border-[#141414] py-6 first:pt-0 last:border-b-0"
+              className="border-b border-[#1b1b1b] py-6 first:pt-0 last:border-b-0"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
@@ -82,7 +82,7 @@ export default function FAQ({ id }: FAQProps) {
               </button>
               {openIndex === index && (
                 <div className="pt-4">
-                  <p className="text-[#8e8e93] text-base leading-relaxed max-w-xl">
+                  <p className="text-[#8e8e93] text-base leading-[1.65] max-w-xl">
                     {faq.answer}
                   </p>
                 </div>

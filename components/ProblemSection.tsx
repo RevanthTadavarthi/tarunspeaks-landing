@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { useReveal } from "@/lib/useReveal";
 
 const DILEMMAS = [
@@ -19,43 +20,70 @@ const DILEMMAS = [
 
 export default function ProblemSection() {
   const [ref, isVisible] = useReveal();
+  const [activeIdx, setActiveIdx] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    const items = container.querySelectorAll(".dilemma-item");
+    if (!items || items.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute("data-index"));
+            setActiveIdx(index);
+          }
+        });
+      },
+      {
+        rootMargin: "-30% 0px -40% 0px",
+        threshold: 0.1,
+      }
+    );
+
+    items.forEach((item) => observer.observe(item));
+    return () => {
+      items.forEach((item) => observer.unobserve(item));
+    };
+  }, [isVisible]);
 
   return (
     <section 
       ref={ref} 
-      className={`w-full border-b border-[#141414] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
+      className={`w-full border-b border-[#1b1b1b] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
     >
       <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
         {/* Left Grid Matrix Column */}
-        <div className="md:col-span-1">
+        <div className="md:col-span-1 md:sticky md:top-24 self-start">
           {/* The Pinned Sticky Container */}
-          <div className="sticky top-24 self-start space-y-4">
-            <h2 className="text-2xl md:text-4xl font-extrabold tracking-tighter uppercase text-[#1526b4] leading-[1.05]">
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-4xl font-extrabold tracking-[-0.04em] leading-[1.0] uppercase text-[#1526b4]">
               The Fragment Trap
             </h2>
-            <p className="text-base font-normal leading-relaxed text-[#8e8e93] max-w-[280px]">
+            <p className="text-[#8e8e93] text-base leading-[1.65] max-w-[280px]">
               Why 90% of digital marketing spend generates noise, not compounding growth.
             </p>
           </div>
         </div>
         
         {/* Right Grid Matrix Column */}
-        <div className="md:col-span-2 flex flex-col justify-start divide-y divide-[#141414]">
+        <div ref={containerRef} className="md:col-span-2 flex flex-col justify-start space-y-40">
           {DILEMMAS.map((item, index) => (
             <div 
               key={index} 
-              className={`py-8 first:pt-0 last:pb-0 transition-all duration-700 ease-out ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-30 translate-y-4"
+              data-index={index}
+              className={`dilemma-item transition-all duration-500 ease-out ${
+                activeIdx === index ? "opacity-100 scale-100" : "opacity-20"
               }`}
-              style={{ transitionDelay: `${index * 150}ms` }}
             >
               <div>
-                <h4 className={`font-extrabold tracking-[-0.04em] text-lg mb-2 leading-[1.0] transition-colors duration-500 ${
-                  isVisible ? "text-white" : "text-[#48484a]"
-                }`}>
+                <h4 className="font-extrabold tracking-[-0.04em] text-lg mb-2 leading-[1.0] text-white">
                   {item.label}
                 </h4>
-                <p className="text-[#8e8e93] text-base leading-relaxed max-w-xl">
+                <p className="text-[#8e8e93] text-base leading-[1.65] max-w-xl">
                   {item.desc}
                 </p>
               </div>

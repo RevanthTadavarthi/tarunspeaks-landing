@@ -41,12 +41,12 @@ export default function EMIModal({ onClose }: EMIModalProps) {
       aria-labelledby="emi-modal-title"
     >
       <div
-        className="bg-[#0d0d0d] border border-[#222222] p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto rounded-none"
+        className="bg-[#0d0d0d] border border-[#1b1b1b] p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto rounded-none"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
-          <h2 id="emi-modal-title" className="text-xl font-bold text-white uppercase tracking-tight font-mono">
+          <h2 id="emi-modal-title" className="text-xl font-extrabold text-white uppercase tracking-[-0.04em] leading-[1.0] font-mono">
             EMI Payment Plans //
           </h2>
           <button
@@ -63,7 +63,7 @@ export default function EMIModal({ onClose }: EMIModalProps) {
           {emiPlans.map((plan, index) => (
             <div
               key={index}
-              className="bg-[#141414] border border-[#222222] p-6 hover:border-[#1526b4]/50 rounded-none transition-colors duration-200"
+              className="bg-black border border-[#1b1b1b] p-6 hover:border-[#1526b4]/50 rounded-none transition-colors duration-200"
             >
               <div className="text-center">
                 <div className="text-2xl font-mono font-bold text-[#00bf63] mb-2">
@@ -81,7 +81,7 @@ export default function EMIModal({ onClose }: EMIModalProps) {
         </div>
 
         {/* Total Amount */}
-        <div className="bg-[#141414] border border-[#222222] p-4 mb-6 rounded-none">
+        <div className="bg-black border border-[#1b1b1b] p-4 mb-6 rounded-none">
           <div className="flex justify-between items-center font-mono text-sm">
             <span className="text-[#8e8e93]">Total Amount:</span>
             <span className="text-xl font-bold text-white">

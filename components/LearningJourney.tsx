@@ -1,66 +1,98 @@
 "use client";
 
+import React from "react";
+import { useReveal } from "@/lib/useReveal";
+
+const journeyPhases = [
+  {
+    phase: "PHASE I",
+    timeframe: "Weeks 01 — 04",
+    milestone: "Framework Reconstruction",
+    description: "Stripping back fragmented platform views. Forcing core structural competence in unit economics, first-party data plumbing, and programmatic attribution tracking maps.",
+    metric: "Output: A production-ready strategic tracking architecture."
+  },
+  {
+    phase: "PHASE II",
+    timeframe: "Weeks 05 — 08",
+    milestone: "The Acquisition Machinery",
+    description: "Orchestrating interconnected paid acquisition systems. Engineering loops where content supply channels feed high-intent performance vectors seamlessly without layout friction.",
+    metric: "Output: Live distribution stress-tests on real channels."
+  },
+  {
+    phase: "PHASE III",
+    timeframe: "Weeks 09 — 12",
+    milestone: "System Scale & Optimization",
+    description: "Deploying lifecycle retention models and product-led loops. Transitioning into cross-functional management models required to direct professional multi-tier execution terms.",
+    metric: "Output: A custom 90-day execution manual tailored to your venture."
+  }
+];
+
 interface LearningJourneyProps {
   id?: string;
 }
 
 export default function LearningJourney({ id }: LearningJourneyProps) {
-  const stages = [
-    {
-      number: "01",
-      title: "Build Your Marketing Foundation",
-      description: "Stop thinking like a content executor. Start thinking like a strategist.",
-    },
-    {
-      number: "02",
-      title: "Master Organic Growth",
-      description: "You understand how to build attention intentionally.",
-    },
-    {
-      number: "03",
-      title: "Run Performance-Driven Campaigns",
-      description: "You connect content to conversions.",
-    },
-    {
-      number: "04",
-      title: "Control the Conversation",
-      description: "You manage not just growth, but trust.",
-    },
-    {
-      number: "05",
-      title: "Go AI-First",
-      description: "You operate like a 2026 marketer — faster, sharper, system-driven.",
-    },
-  ];
+  const [ref, isVisible] = useReveal();
 
   return (
-    <section id={id} className="py-24 px-6 bg-black border-b border-[#141414]">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-[-0.04em] leading-[1.0] text-white uppercase">
-            Learning Journey
+    <section 
+      ref={ref}
+      id={id || "journey"} 
+      className={`w-full border-b border-[#1b1b1b] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
+    >
+      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 items-start">
+        
+        {/* Left Informational Block Anchor */}
+        <div className="md:col-span-1 md:sticky md:top-24 space-y-4">
+          <h2 className="text-2xl md:text-3xl font-extrabold tracking-[-0.04em] leading-[1.0] uppercase text-[#1526b4]">
+            The Execution Trajectory
           </h2>
+          <p className="text-xs font-mono text-[#8e8e93] uppercase tracking-wider">A Linear Roadmap. No Fallbacks.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-0 border border-[#141414]">
-          {stages.map((stage, index) => (
-            <div
-              key={index}
-              className="bg-[#141414] p-6 border-b md:border-b-0 md:border-r border-[#141414] last:border-b-0 last:border-r-0 rounded-none flex flex-col justify-between min-h-[220px]"
-            >
-              <div>
-                <div className="font-mono text-xs text-[#00bf63] mb-4">
-                  {stage.number}
-                </div>
-                <h3 className="text-white font-bold text-[15px] leading-tight mb-2 uppercase tracking-tight">
-                  {stage.title}
-                </h3>
+        {/* Right Map Stream Axis */}
+        <div className="md:col-span-3 relative pl-6 border-l border-[#1b1b1b] space-y-24">
+          
+          {journeyPhases.map((item, index) => (
+            <div key={index} className="relative group space-y-4">
+              
+              {/* Geometric Directional Node Element */}
+              <div className="absolute -left-[31px] top-1 bg-black border border-[#1b1b1b] w-[11px] h-[11px] group-hover:border-[#1526b4] transition-colors duration-200" />
+
+              {/* Stark Minimal Textual Headers */}
+              <div className="flex flex-col md:flex-row md:items-baseline md:gap-4 leading-none">
+                <span className="text-xs font-mono font-bold tracking-widest text-[#ffffff] uppercase">
+                  {item.phase}
+                </span>
+                <span className="text-xs font-mono text-[#444444] tracking-tight">
+                  {item.timeframe}
+                </span>
               </div>
-              <p className="text-[#8e8e93] text-xs leading-relaxed font-mono mt-auto">
-                {stage.description}
-              </p>
+
+              {/* Dynamic Milestone Stack */}
+              <div className="max-w-xl space-y-2">
+                <h3 className="text-xl md:text-2xl font-extrabold tracking-[-0.04em] leading-[1.0] text-white uppercase">
+                  {item.milestone}
+                </h3>
+                <p className="text-[#8e8e93] text-base leading-[1.65]">
+                  {item.description}
+                </p>
+                <div className="pt-2">
+                  <span className="text-xs font-mono uppercase text-[#00bf63] tracking-tight">
+                    {item.metric}
+                  </span>
+                </div>
+              </div>
             </div>
           ))}
+
+          {/* Explicit Minimal Arrow Baseline Terminal Indicator */}
+          <div className="absolute -left-[10px] bottom-0 transform translate-y-full flex flex-col items-center">
+            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#1b1b1b]">
+              <path d="M9.5 19L0.406734 3.25L18.5933 3.25L9.5 19Z" fill="currentColor"/>
+            </svg>
+          </div>
+
         </div>
       </div>
     </section>
