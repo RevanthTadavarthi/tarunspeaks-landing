@@ -12,7 +12,7 @@ export default function InstructorCard({ id }: InstructorCardProps) {
           <div className="text-[11px] uppercase tracking-[0.12em] text-[#1526b4] mb-3 font-mono font-semibold">
             INSTRUCTOR //
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-white uppercase tracking-[-0.04em] leading-[1.0]">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tighter leading-none text-white text-center">
             Tarun is not just a trainer — he's a marketing practitioner.
           </h2>
         </div>
@@ -31,7 +31,7 @@ export default function InstructorCard({ id }: InstructorCardProps) {
             {/* Instructor Info */}
             <div className="space-y-6">
               <div>
-                <h3 className="text-3xl font-extrabold text-white mb-4 uppercase tracking-[-0.04em] leading-[1.0]">Tarun Makhija</h3>
+                <h3 className="text-lg md:text-xl font-bold tracking-tight text-white mb-4 uppercase">Tarun Makhija</h3>
                 <p className="text-[#8e8e93] text-base leading-[1.65] mb-6">
                   10+ years of hands-on experience building brands, designing campaigns, and leading strategy across sectors. Chief Educator & CEO of TarunSpeaks. Co-founded Big Mouth Digital & Media. Every session in RMDM is built from real campaign work — not textbooks.
                 </p>

@@ -42,11 +42,11 @@ export default function WhoIsItFor({ id }: WhoIsItForProps) {
       ref={ref} 
       className={`w-full border-b border-[#1b1b1b] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
     >
-      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
+      <div className="max-w-5xl mx-auto px-6 w-full block md:grid md:grid-cols-3 gap-8 md:gap-12 items-start">
         {/* Left Column: Pinned Sticky Container */}
         <div className="md:col-span-1 self-stretch">
           <div className="md:sticky md:top-24 self-start space-y-4">
-            <h2 className="text-2xl md:text-4xl font-extrabold tracking-[-0.04em] leading-[1.0] uppercase text-[#1526b4]">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tighter leading-none text-[#1526b4]">
               Designed for those who lead growth
             </h2>
             <p className="text-[#8e8e93] text-base leading-[1.65] max-w-[280px]">

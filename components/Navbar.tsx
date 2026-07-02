@@ -62,7 +62,7 @@ export default function Navbar() {
 
             <Link href="#apply" className="inline-flex items-center">
               <span
-                className="rounded-md px-5 py-2.5 bg-[#1526b4] text-white text-sm font-bold tracking-tight transition-all duration-200 uppercase hover:bg-[#1f32d2]"
+                className="px-6 py-3 bg-[#1526b4] text-white font-mono text-xs uppercase tracking-wider rounded-md transition-all hover:bg-[#1526b4]/90 text-center block h-auto"
                 role="button"
               >
                 Apply for Batch 14

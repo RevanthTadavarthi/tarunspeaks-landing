@@ -89,8 +89,8 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
                   variant={action.variant as any} 
                   asChild
                   className={action.variant === "default" 
-                    ? "bg-[#1526b4] hover:bg-[#1f32d2] text-white px-8 py-4 rounded-md font-bold text-center tracking-tight transition-all duration-200 uppercase h-auto min-h-[52px] w-full sm:w-auto border border-[#1526b4]" 
-                    : "border border-white/20 hover:bg-white/8 text-white px-8 py-4 rounded-md font-bold text-center tracking-tight transition-all duration-200 uppercase h-auto min-h-[52px] bg-transparent w-full sm:w-auto"}
+                    ? "px-6 py-3 bg-[#1526b4] text-white font-mono text-xs uppercase tracking-wider rounded-md transition-all hover:bg-[#1526b4]/90 w-full md:w-auto text-center block border border-[#1526b4] h-auto" 
+                    : "px-6 py-3 border border-white/20 text-white font-mono text-xs uppercase tracking-wider rounded-md transition-all hover:bg-white/10 w-full md:w-auto text-center block bg-transparent h-auto"}
                 >
                   <Link href={action.href}>{action.label}</Link>
                 </Button>

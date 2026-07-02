@@ -119,7 +119,7 @@ export default function FinalCTA({ id }: FinalCTAProps) {
   return (
     <section id={id || "apply"} className="relative py-24 px-4 sm:px-6 lg:px-8 bg-black border-t border-[#1b1b1b]">
       <div className="relative z-10 max-w-[1200px] mx-auto flex flex-col items-center">
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-center mb-4 text-white uppercase tracking-[-0.04em] leading-[1.0] max-w-2xl">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tighter leading-none text-white text-center mb-4 max-w-2xl">
           Ready to stop learning in fragments?
         </h2>
         <div className="text-[#8e8e93] text-center mb-12 text-base leading-[1.65]">
@@ -238,7 +238,7 @@ export default function FinalCTA({ id }: FinalCTAProps) {
                 <button
                   type="submit"
                   disabled={uiState === "loading"}
-                  className="w-full rounded-md bg-[#1526b4] py-[15px] px-[24px] text-white font-bold text-center tracking-tight transition-all duration-200 uppercase disabled:opacity-85 hover:bg-[#1f32d2] flex items-center justify-center gap-2"
+                  className="px-6 py-3 bg-[#1526b4] text-white font-mono text-xs uppercase tracking-wider rounded-md transition-all hover:bg-[#1526b4]/90 w-full text-center block h-auto disabled:opacity-85 flex items-center justify-center gap-2"
                 >
                   {uiState === "loading" ? (
                     "SUBMITTING..."

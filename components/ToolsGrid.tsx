@@ -92,7 +92,7 @@ export default function ToolsGrid({ id }: ToolsGridProps) {
         <div className="text-[11px] uppercase tracking-[0.12em] text-[#1526b4] mb-4 font-semibold text-center">
           TOOLS
         </div>
-        <h2 className="text-4xl sm:text-5xl lg:text-[48px] font-extrabold tracking-[-0.04em] leading-[1.0] text-[#FFFFFF] text-center">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tighter leading-none text-white text-center">
           20 tools. Real workflows.
         </h2>
       </div>

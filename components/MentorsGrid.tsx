@@ -27,7 +27,7 @@ export default function MentorsGrid({ id }: MentorsGridProps) {
           <div className="text-[11px] uppercase tracking-[0.12em] text-[#1526b4] mb-3 font-mono font-semibold">
             NETWORK //
           </div>
-          <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-center text-white uppercase tracking-[-0.04em] leading-[0.95]">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tighter leading-none text-white text-center">
             Top 1% Mentors from Tarun's Network
           </h2>
         </div>

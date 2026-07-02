@@ -36,7 +36,7 @@ export default function Pricing({ id }: PricingProps) {
           <div className="text-[11px] uppercase tracking-[0.12em] text-[#1526b4] font-semibold mb-4">
             Pricing
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-2 text-white tracking-[-0.04em] leading-[1.0]">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tighter leading-none text-white text-center mb-2">
             The investment.
           </h2>
           <div className="text-[#8e8e93] text-base leading-[1.65] text-center mb-16">
@@ -97,16 +97,16 @@ export default function Pricing({ id }: PricingProps) {
             Applications close once 30 candidates are accepted. Batch 14 — April 2026.
           </div>
 
-          <div className="flex flex-col gap-4 w-full max-w-[280px]">
+          <div className="flex flex-col md:flex-row gap-4 w-full justify-center items-center">
             <Link
               href="#apply"
-              className="bg-[#1526b4] hover:bg-[#1f32d2] text-white rounded-md px-8 py-3.5 font-bold text-center tracking-tight transition-all duration-200 uppercase flex items-center justify-center whitespace-nowrap"
+              className="px-6 py-3 bg-[#1526b4] text-white font-mono text-xs uppercase tracking-wider rounded-md transition-all hover:bg-[#1526b4]/90 w-full md:w-auto text-center block h-auto border border-[#1526b4]"
             >
               Apply for Batch 14 →
             </Link>
             <button
               onClick={() => setShowEMIModal(true)}
-              className="border border-white/20 hover:bg-white/8 text-white rounded-md px-7 py-3.5 font-bold text-center tracking-tight transition-all duration-200 uppercase flex items-center justify-center whitespace-nowrap"
+              className="px-6 py-3 border border-white/20 text-white font-mono text-xs uppercase tracking-wider rounded-md transition-all hover:bg-white/10 w-full md:w-auto text-center block bg-transparent h-auto"
             >
               View EMI Plans
             </button>

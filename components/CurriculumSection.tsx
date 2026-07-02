@@ -43,12 +43,12 @@ export default function CurriculumSection({ id }: CurriculumSectionProps) {
 
   return (
     <section id={id || "curriculum"} className="w-full border-b border-[#1b1b1b] py-24 md:py-32 bg-black">
-      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 items-start w-full">
+      <div className="max-w-5xl mx-auto px-6 w-full block md:grid md:grid-cols-3 gap-8 md:gap-12 items-start">
         
         {/* Left Interactive Controller Column */}
         <div className="md:col-span-1 md:sticky md:top-24 space-y-8 md:space-y-12">
           <div>
-            <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-[-0.04em] leading-[0.95] uppercase text-[#1526b4] mb-2">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tighter leading-none text-[#1526b4] mb-2">
               The System Archetype
             </h2>
             <p className="text-xs font-mono text-[#8e8e93] uppercase tracking-wider">4 Core Modules. Zero Fluff.</p>

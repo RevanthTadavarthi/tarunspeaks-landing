@@ -40,11 +40,11 @@ export default function LearningJourney({ id }: LearningJourneyProps) {
       id={id || "journey"} 
       className={`w-full border-b border-[#1b1b1b] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
     >
-      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 items-start">
+      <div className="max-w-5xl mx-auto px-6 w-full block md:grid md:grid-cols-4 gap-8 md:gap-12 items-start">
         
         {/* Left Informational Block Anchor */}
         <div className="md:col-span-1 md:sticky md:top-24 space-y-4">
-          <h2 className="text-2xl md:text-3xl font-extrabold tracking-[-0.04em] leading-[1.0] uppercase text-[#1526b4]">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tighter leading-none text-[#1526b4]">
             The Execution Trajectory
           </h2>
           <p className="text-xs font-mono text-[#8e8e93] uppercase tracking-wider">A Linear Roadmap. No Fallbacks.</p>
