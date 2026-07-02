@@ -55,12 +55,18 @@ export default function ProblemSection() {
       ref={ref} 
       className={`w-full border-b border-[#1b1b1b] py-24 md:py-32 bg-black reveal ${isVisible ? 'show' : ''}`}
     >
-      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
-        {/* Left Grid Matrix Column */}
-        <div className="md:col-span-1 md:sticky md:top-24 self-start">
-          {/* The Pinned Sticky Container */}
+      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 items-start w-full">
+        {/* Mobile Sticky Banner (only visible on mobile) */}
+        <div className="block md:hidden sticky top-16 bg-[#0d0d0d]/90 backdrop-blur-md z-40 py-4 border-b border-[#141414] w-full">
+          <h2 className="text-3xl font-extrabold tracking-[-0.04em] leading-[0.95] uppercase text-[#1526b4]">
+            The Fragment Trap
+          </h2>
+        </div>
+
+        {/* Desktop Left Column (only visible on desktop) */}
+        <div className="md:col-span-1 md:sticky md:top-24 self-start hidden md:block">
           <div className="space-y-4">
-            <h2 className="text-2xl md:text-4xl font-extrabold tracking-[-0.04em] leading-[1.0] uppercase text-[#1526b4]">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-[-0.04em] leading-[0.95] uppercase text-[#1526b4]">
               The Fragment Trap
             </h2>
             <p className="text-[#8e8e93] text-base leading-[1.65] max-w-[280px]">
@@ -70,7 +76,7 @@ export default function ProblemSection() {
         </div>
         
         {/* Right Grid Matrix Column */}
-        <div ref={containerRef} className="md:col-span-2 flex flex-col justify-start space-y-40">
+        <div ref={containerRef} className="md:col-span-2 flex flex-col justify-start space-y-24 md:space-y-40">
           {DILEMMAS.map((item, index) => (
             <div 
               key={index} 

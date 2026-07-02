@@ -43,15 +43,59 @@ export default function FinalCTA({ id }: FinalCTAProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Client-side sanitization & validation
+    const sanitizedName = formData.name.trim().replace(/[<>]/g, "");
+    const sanitizedPhone = formData.phone.trim().replace(/[<>]/g, "");
+    const sanitizedEmail = formData.email.trim().toLowerCase().replace(/[<>]/g, "");
+    const sanitizedRole = formData.role.trim().replace(/[<>]/g, "");
+    const sanitizedGoal = formData.goal.trim().replace(/[<>]/g, "");
+    const sanitizedSource = formData.source.trim().replace(/[<>]/g, "");
+
+    if (sanitizedName.length < 2 || sanitizedName.length > 70) {
+      setErrorMsg("Please enter a valid name (2-70 characters).");
+      return;
+    }
+    if (sanitizedPhone.length < 8 || sanitizedPhone.length > 20) {
+      setErrorMsg("Please enter a valid phone number.");
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(sanitizedEmail)) {
+      setErrorMsg("Please enter a valid email address.");
+      return;
+    }
+    if (!sanitizedRole) {
+      setErrorMsg("Please select your current role.");
+      return;
+    }
+    if (sanitizedGoal.length < 5 || sanitizedGoal.length > 500) {
+      setErrorMsg("Please specify your goals (5-500 characters).");
+      return;
+    }
+
     setUiState("loading");
     setErrorMsg("");
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 12000); // 12 seconds timeout limit
 
     try {
       const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: sanitizedName,
+          phone: sanitizedPhone,
+          email: sanitizedEmail,
+          role: sanitizedRole,
+          goal: sanitizedGoal,
+          source: sanitizedSource,
+        }),
+        signal: controller.signal,
       });
+
+      clearTimeout(timeoutId);
 
       if (res.ok) {
         setUiState("success");
@@ -59,9 +103,13 @@ export default function FinalCTA({ id }: FinalCTAProps) {
         setUiState("form");
         setErrorMsg("Something went wrong. Please email us at teamtarunspeaks@gmail.com");
       }
-    } catch (err) {
+    } catch (err: any) {
       setUiState("form");
-      setErrorMsg("Something went wrong. Please email us at teamtarunspeaks@gmail.com");
+      if (err.name === "AbortError") {
+        setErrorMsg("Connection timed out. Please check your internet connection or email us at teamtarunspeaks@gmail.com");
+      } else {
+        setErrorMsg("Something went wrong. Please email us at teamtarunspeaks@gmail.com");
+      }
     }
   };
 

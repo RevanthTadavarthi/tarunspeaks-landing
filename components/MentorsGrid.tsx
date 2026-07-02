@@ -27,17 +27,17 @@ export default function MentorsGrid({ id }: MentorsGridProps) {
           <div className="text-[11px] uppercase tracking-[0.12em] text-[#1526b4] mb-3 font-mono font-semibold">
             NETWORK //
           </div>
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-center text-white uppercase tracking-[-0.04em] leading-[1.0]">
+          <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-center text-white uppercase tracking-[-0.04em] leading-[0.95]">
             Top 1% Mentors from Tarun's Network
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-[#1b1b1b] border-l border-[#1b1b1b]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {mentors.map((mentor, index) => {
             const initial = mentor.name.charAt(0).toUpperCase();
             return (
               <div
                 key={index}
-                className="flex items-center p-6 bg-black border-r border-b border-[#1b1b1b] rounded-none"
+                className="flex items-center p-6 bg-black border border-[#1b1b1b] rounded-none"
               >
                 <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-none bg-[#1526b4] text-white font-mono font-bold text-lg mr-4">
                   {initial}
